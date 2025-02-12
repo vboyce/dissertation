@@ -25,14 +25,6 @@ header-includes:
 # Can only choose one at a time.
 output:
   thesisdown::thesis_pdf: default 
-#  thesisdown::thesis_gitbook: default         
-#  thesisdown::thesis_word: default
-#  thesisdown::thesis_epub: default
-
-# If you are creating a PDF you'll need to write your preliminary content 
-# (e.g., abstract, acknowledgements) below or use code similar to line 25-26 
-# for the .RMD files. If you are NOT producing a PDF, delete or silence
-# lines 25-39 in this YAML header.
 abstract: |
  I'm an abstract right here, look at me!
 # If you'd rather include the preliminary content in files instead of inline
@@ -42,11 +34,11 @@ acknowledgements: |
   I want to thank a few people.
 dedication: |
   You can have a dedication here if you wish. 
-preface: |
-  This is an example of a thesis setup to use the reed thesis document class 
-  (for LaTeX) and the R bookdown package, in general.
+#preface: |
+#  This is an example of a thesis setup to use the reed thesis document class 
+#  (for LaTeX) and the R bookdown package, in general.
 # Specify the location of the bibliography below
-bibliography: [bib/mpt.bib, bib/preschool-tangrams.bib]
+bibliography: [bib/arrgh.bib, bib/mpt.bib, bib/preschool-tangrams.bib, bib/tg-matcher.bib]
 # Download your specific csl file and refer to it in the line below.
 csl: csl/apa7.csl
 lot: true
