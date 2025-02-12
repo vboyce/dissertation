@@ -15,6 +15,11 @@ site: bookdown::bookdown_site
 header-includes:
     - \usepackage{setspace}
     - \onehalfspacing
+    - \usepackage{tikz}
+    - \usetikzlibrary{angles,positioning,arrows.meta, quotes, shapes, shapes.geometric}
+    - \usepackage{graphicx}
+   # - \usepackage{emoji}
+    - \usepackage{caption, subcaption}
 
 # Remove the hashtag to specify which version of output you would like.
 # Can only choose one at a time.
@@ -41,7 +46,7 @@ preface: |
   This is an example of a thesis setup to use the reed thesis document class 
   (for LaTeX) and the R bookdown package, in general.
 # Specify the location of the bibliography below
-bibliography: [bib/thesis.bib, bib/preschool-tangrams.bib]
+bibliography: [bib/mpt.bib, bib/preschool-tangrams.bib]
 # Download your specific csl file and refer to it in the line below.
 csl: csl/apa7.csl
 lot: true
@@ -56,6 +61,9 @@ knitr::opts_chunk$set(
   message = F, sanitize = T
 )
 
+require(Hmisc)#not directly called, but needed for dots on plots with mean_ci_boot ! 
+#this has to go first b/c it defines summarize and that screws things up
+
 library(png)
 library(grid)
 library(ggplot2)
@@ -63,12 +71,18 @@ library(xtable)
 library(tidyverse)
 library(here)
 library(brms)
-library(rstan)
-library(rstanarm)
 library(ggthemes)
 library(kableExtra)
-rstan_options(auto_write = TRUE)
-options(mc.cores = parallel::detectCores())
+library(jsonlite)
+library(rlang)
+library(lme4)
+library(viridis)
+library(cowplot)
+library(tidybayes)
+
+
 theme_set(theme_bw())
+
+
 
 ```
