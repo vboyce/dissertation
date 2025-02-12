@@ -1,0 +1,74 @@
+---
+title: 'The Future of Scholarship'
+author: 'Mary J. Stanford'
+date: 'May 2018'
+advisor: 'Advisor T. Greatest'
+firstreader: 'L. O. Sunshine'
+secondreader: 'Carl Friedrich Gauss'
+department: 'Psychology'
+institution: 'Stanford University'
+knit: bookdown::render_book
+site: bookdown::bookdown_site
+
+# The next two lines allow you to change the spacing in your thesis. You can 
+# switch out \onehalfspacing with \singlespacing or \doublespacing, if desired.
+header-includes:
+    - \usepackage{setspace}
+    - \onehalfspacing
+
+# Remove the hashtag to specify which version of output you would like.
+# Can only choose one at a time.
+output:
+  thesisdown::thesis_pdf: default 
+#  thesisdown::thesis_gitbook: default         
+#  thesisdown::thesis_word: default
+#  thesisdown::thesis_epub: default
+
+# If you are creating a PDF you'll need to write your preliminary content 
+# (e.g., abstract, acknowledgements) below or use code similar to line 25-26 
+# for the .RMD files. If you are NOT producing a PDF, delete or silence
+# lines 25-39 in this YAML header.
+abstract: |
+ I'm an abstract right here, look at me!
+# If you'd rather include the preliminary content in files instead of inline
+# like below, use a command like that for the abstract above.  Note that a tab 
+# is needed on the line after the `|`.
+acknowledgements: |
+  I want to thank a few people.
+dedication: |
+  You can have a dedication here if you wish. 
+preface: |
+  This is an example of a thesis setup to use the reed thesis document class 
+  (for LaTeX) and the R bookdown package, in general.
+# Specify the location of the bibliography below
+bibliography: [bib/thesis.bib, bib/preschool-tangrams.bib]
+# Download your specific csl file and refer to it in the line below.
+csl: csl/apa7.csl
+lot: true
+lof: true
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(
+  fig.width = 3, fig.height = 3, fig.crop = F,
+  fig.pos = "tb", fig.path = "figs/",
+  echo = F, warning = F, cache = F,
+  message = F, sanitize = T
+)
+
+library(png)
+library(grid)
+library(ggplot2)
+library(xtable)
+library(tidyverse)
+library(here)
+library(brms)
+library(rstan)
+library(rstanarm)
+library(ggthemes)
+library(kableExtra)
+rstan_options(auto_write = TRUE)
+options(mc.cores = parallel::detectCores())
+theme_set(theme_bw())
+
+```
