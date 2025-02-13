@@ -1,7 +1,12 @@
-# The big fat chapter: Interaction structure constrains the emergence of conventions in group communication
+# Interaction structure 
 
 ```{r set-up, include=FALSE}
-
+knitr::opts_chunk$set(
+  fig.width = 3, fig.height = 3, fig.crop = F,
+  fig.pos = "tb", fig.path = "figs/",
+  echo = F, warning = F, cache = F,
+  message = F, sanitize = T
+)
 require(Hmisc)#not directly called, but needed for dots on plots with mean_ci_boot ! 
 #this has to go first b/c it defines summarize and that screws things up
 
@@ -21,7 +26,7 @@ library(viridis)
 library(cowplot)
 library(tidybayes)
 
-
+theme_set(theme_bw())
 
 color_scheme_1 <- c("2"="#FFBDD4", "5"="#A12EFF", "3"="#FF7DF0","6"="#6940FF","4"="#D24AFF")
 color_scheme_2 <- c( "6 full feedback"="#425df5", "6 same describer"="#00A2FF","6 thin"="#D47E04")
@@ -88,11 +93,11 @@ words <- combined_chat |> ungroup() |> select(total_num_words) |> summarize(word
 Much of human social life revolves around communication in groups. 
 At school, teachers address large classrooms of children [@cazden1988classroom]; at home, we chat with groups of friends and family members over dinner [@tannen2005conversational]; and at work, we attend meetings with colleagues and managers [@caplow1957organizational; @zack1993interactivity].
 Such settings present considerable challenges that do not arise in the purely two-party (dyadic) settings typically studied in psychology [@branigan2006; @ginzburg2005; @traum2004]. 
-For example, producers need to account for the fact that different comprehenders in the group may have different mental states or levels of background understanding [@horton2005; @horton2002; @yoon2018; @yoon2014; @weber2003;@fox-tree2013], while comprehenders must account for the fact that utterances are not necessarily tailored to them [@fay2000; @carletta1998; @metzing2003; @yoon2019; @rogers2013; @cohngordon; @tolins2016].
+For example, producers need to account for the fact that different comprehenders in the group may have different mental states or levels of background understanding [@horton2005; @horton2002; @yoon2018; @yoon2014; @weber2003;@foxtree2013], while comprehenders must account for the fact that utterances are not necessarily tailored to them [@fay2000; @carletta1998; @metzing2003a; @yoon2019; @rogers2013; @cohngordon; @tolins2016].
 What enables producers and comprehenders to nevertheless overcome these challenges and navigate multi-party settings with relative ease? 
 
 One promising set of hypotheses centers on the group's *interaction structure*, the set of constraints placed on the group's shared communication channel. 
-Many different aspects of interaction structure have been implicated in the effectiveness of dyadic communication, including the availability and quality of concurrent feedback [@krauss1966; @KraussBricker67_Delay; @kraut1982listener], the bandwidth of the communication modality [@KraussEtAl77;@dewhirst1971influence], and the group's access to a shared workspace [@clark2004speaking; @garrod2007foundations].
+Many different aspects of interaction structure have been implicated in the effectiveness of dyadic communication, including the availability and quality of concurrent feedback [@krauss1966; @KraussBricker67_Delay; @kraut1982listener], the bandwidth of the communication modality [@KraussEtAl77;@dewhirst1971influence], and the group's access to a shared workspace [@clark2004speaking; @garrod2007].
 Yet larger groups introduce qualitatively different dimensions of interaction structure, leading to a large but often inconsistent body of findings even for these well-understood factors [@swaab2012communication; @hiltz1986experiments].
 While communication is generally expected to deteriorate as groups get larger [@macmillan_communication_2004; @seaman1997communication], the structural "thickness" of the feedback channel may slow such deterioration [@ahern1994effect; @parisi2005evaluating]. 
 
@@ -103,14 +108,14 @@ They provide a clear metric of communicative effectiveness: how many words are r
 *Repeated* reference games, where the same target images appear multiple times in succession, were introduced to examine how interlocutors establish shared reference in the absence of conventional labels [@krauss1964; @clark1986].
 At the beginning of the game, long and costly descriptions are typically required to succeed. 
 A key finding, however, is that dyads become increasingly efficient over the course of interaction. 
-Fewer words are required to achieve the same accuracy, but referring expressions also become more impenetrable to outsiders [@schober1989; @wilkes1992coordinating]. 
+Fewer words are required to achieve the same accuracy, but referring expressions also become more impenetrable to outsiders [@schober1989; @wilkes1992]. 
 The evolution of referring expressions over repetitions shows the characteristic dynamics of conventions: *stability*, or convergence on labels within a group, and *arbitrariness*, or divergence to different across groups, suggesting that dyads leverage their shared communication history to coordinate on expectations about how to label the target images [@hawkins2023partners]. 
 
 
 In principle, repeated reference games provide a strong operationalization of communicative effectiveness for the problem of multi-party communication: describers must simultaneously achieve shared reference with multiple matchers. 
 However, empirically studying multi-party communication raises a number of difficulties in practice. 
-A much larger pool of participants must be recruited to achieve sufficient power at the relevant unit of analysis -- the group -- spanning a very high-dimensional space of possible parameter settings [@almaatouq2022].
-We address this problem by drawing on recent technical advances that have made it newly possible to achieve such samples using interactive web-based platforms [@almaatouq2020empirica;@haber2019;@hawkins2023partners]. 
+A much larger pool of participants must be recruited to achieve sufficient power at the relevant unit of analysis -- the group -- spanning a very high-dimensional space of possible parameter settings [@almaatouq2024].
+We address this problem by drawing on recent technical advances that have made it newly possible to achieve such samples using interactive web-based platforms [@almaatouq2020;@haber2019;@hawkins2023partners]. 
 Repeated reference games in web-based platforms have previously replicated earlier results from face-to-face studies, although people produce fewer words in text modalities than oral modalities [@hawkins2020]. The text-based chat modalities arguably more closely resemble the interfaces used by modern teams who increasingly communicate through group text threads or popular platforms like Slack or Discord. 
 
 We leverage our platform to explore effects of group size and interaction channel thickness in a series of three experiments. 
@@ -119,7 +124,7 @@ Thus, increasing group size alone does not impede communication; rather, larger 
 More broadly, our work suggests that studying communication in larger groups is necessary to unveil critical aspects of interaction structure that have not been evident in typical dyadic settings.
 
 
-```{r diagram,  fig.env = "figure*", fig.pos = "t!", fig.width=10, fig.height=8, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap="(A) Participants played a repeated reference game in groups of size 2 to 6. On each trial, a describer described the target image to the group of matchers. Each image appeared once per block for six blocks. (B) Experiments varied along 3 dimensions: Group size, group coherence, and matcher contributions. (C) Experiment 1 (pink) varied group size from 2 to 6 players while holding group coherence and matcher contributions constant. Experiment 2 (blue) held group size constant at 6 and manipulated the other dimensions. Experiment 3 (green) tested 4 corners of the space, crossing group size (2 vs. 6 players) with the thickness of interaction structure (high vs. low coherence and matcher contributions)."}
+```{r diagram,  fig.env = "figure", fig.pos = "t!", out.width=".95\\textwidth", fig.width=10, fig.height=8, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap="(A) Participants played a repeated reference game in groups of size 2 to 6. On each trial, a describer described the target image to the group of matchers. Each image appeared once per block for six blocks. (B) Experiments varied along 3 dimensions: Group size, group coherence, and matcher contributions. (C) Experiment 1 (pink) varied group size from 2 to 6 players while holding group coherence and matcher contributions constant. Experiment 2 (blue) held group size constant at 6 and manipulated the other dimensions. Experiment 3 (green) tested 4 corners of the space, crossing group size (2 vs. 6 players) with the thickness of interaction structure (high vs. low coherence and matcher contributions)."}
 knitr::include_graphics(here("mpt/expt-diagram4.pdf"))
 ```
 
@@ -156,7 +161,7 @@ In the *thick* condition, we maintained a consistent describer, gave all matcher
 In the *thin* condition, we forced the describer to rotate on each block, restricted feedback to their own binary correctness, and restricted matcher contributions to the four emojis.
 Note that the 2-player thick game most closely resembles the design of classic repeated reference games [@clark1986].
 
-```{r behavioral, fig.env = "figure*", fig.pos = "t!", fig.width=10, fig.height=8.5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Behavioral results across all three experiments. (A-C). Matcher accuracy at selecting the target image. (D-F). Number of words produced by the describer each trial. For all, small dots are per game, per block means, and smooth lines are predictions from model fixed effects with 95\\% credible intervals. Y-axes are truncated, and a few outliers points are not visible."}
+```{r behavioral, fig.env = "figure*", fig.pos = "t!", out.width=".95\\textwidth", fig.width=10, fig.height=8.5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Behavioral results across all three experiments. (A-C). Matcher accuracy at selecting the target image. (D-F). Number of words produced by the describer each trial. For all, small dots are per game, per block means, and smooth lines are predictions from model fixed effects with 95\\% credible intervals. Y-axes are truncated, and a few outliers points are not visible."}
 # accuracy
 
 acc_pred_1 <- read_rds(here("mpt/code/paper_mods/prediction/acc_pred_1.rds"))
@@ -576,7 +581,7 @@ Overall, describers in larger groups receive more total input from matchers, sug
 
 ### Descriptions converge faster in groups with thicker channels
 
-```{r sbert-diagram, fig.env = "figure*", fig.pos = "t!", fig.width=10, fig.height=8, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Example utterances describing the shown tangram figure produced by two 3-player games in Experiment 1. To measure convergence within a game (blue), we measured the cosine similarity between SBERT embeddings of descriptions and the embedding of the round 6 utterance (taken to be the convention). Higher cosine similarity indicates more similar meaning. To measure divergence between games (green), we measured the similarity between embeddings of utterances from the same round across games."}
+```{r sbert-diagram, fig.env = "figure*", fig.pos = "t!", out.width=".95\\textwidth", fig.width=10, fig.height=8, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Example utterances describing the shown tangram figure produced by two 3-player games in Experiment 1. To measure convergence within a game (blue), we measured the cosine similarity between SBERT embeddings of descriptions and the embedding of the round 6 utterance (taken to be the convention). Higher cosine similarity indicates more similar meaning. To measure divergence between games (green), we measured the similarity between embeddings of utterances from the same round across games."}
 knitr::include_graphics(here("mpt/sbert.pdf"))
 ```
 
@@ -601,7 +606,7 @@ To measure stability, or convergence within groups, we compared utterances from 
 To measure arbitrariness, or divergence across groups depending on group-specific history, we compared utterances produced by different describers for the same image in the corresponding blocks. 
 Figure \@ref(fig:sbert-diagram) illustrates these two measures with example utterances and their within-game and between-game cosine similarities. 
 
-```{r sbert, fig.env = "figure*", fig.pos = "t!", fig.width=10, fig.height=8.5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Language similarity results measured with pairwise cosine similarity between embeddings of two utterances. (A-C). Convergence of descriptions within games as measured by similarity between an utterance from block 1-5 to the block 6 utterance in the same game for the same image. (D-F). Divergence of descriptions across games as measured by the similarity between two utterances produced for the same image by different groups in the same block. For all, small dots are per game, per block means, and smooth lines are predictions from model fixed effects with 95\\% credible intervals. Y-axes are truncated, and a few outliers points are not visible."}
+```{r sbert, fig.env = "figure*", fig.pos = "t!", out.width=".95\\textwidth", fig.width=10, fig.height=8.5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Language similarity results measured with pairwise cosine similarity between embeddings of two utterances. (A-C). Convergence of descriptions within games as measured by similarity between an utterance from block 1-5 to the block 6 utterance in the same game for the same image. (D-F). Divergence of descriptions across games as measured by the similarity between two utterances produced for the same image by different groups in the same block. For all, small dots are per game, per block means, and smooth lines are predictions from model fixed effects with 95\\% credible intervals. Y-axes are truncated, and a few outliers points are not visible."}
 #convergence
 one_two_converge <- read_rds(here("mpt/code/models/one_two_converge.rds"))
 three_converge <- read_rds(here("mpt/code/models/three_converge.rds"))
@@ -852,7 +857,7 @@ Thus, we encourage measures of semantic content (and not just performance) when 
 
 The causal mechanisms driving group size effects remain unclear. 
 There are many differences between a 2-person group and a 6-person group that could plausibly lead to different outcomes. 
-For example, in a dyad, producers can tailor their utterances to the one matcher, but in large groups, producers must balance the competing needs of different comprehenders [@schober1989; @yoon2018; @tolins2016]. These effects likely vary with the knowledge state and the communication channels available to comprehenders [@fox-tree2013; @horton2002; @horton2005]. 
+For example, in a dyad, producers can tailor their utterances to the one matcher, but in large groups, producers must balance the competing needs of different comprehenders [@schober1989; @yoon2018; @tolins2016]. These effects likely vary with the knowledge state and the communication channels available to comprehenders [@foxtree2013; @horton2002; @horton2005]. 
 Further work digging into the language used and the interactions between participants might unearth plausible mechanisms for how differences in group size and interaction structure influence outcomes, pointing towards future experimental conditions. 
 
 <!-- ## Limitations and future directions.  -->
@@ -877,7 +882,7 @@ As remote work and online communication become increasingly prevalent, it is inc
 
 ## Materials and Methods
 
-Our iterated reference task was implemented with Empirica [@almaatouq2020empirica], a React-based web development framework for real-time multi-player tasks. 
+Our iterated reference task was implemented with Empirica [@almaatouq2020], a React-based web development framework for real-time multi-player tasks. 
 Our experiments were designed sequentially and pre-registered individually.^[Experiment 1: https://osf.io/cn9f4 for the 2-4 player groups, and https://osf.io/rpz67 for the 5-6 player data run later. Experiment 2: same describer at  https://osf.io/f9xyd, full feedback at  https://osf.io/j5zbm, and thin at  https://osf.io/k5f4t. Experiment 3: https://osf.io/untzy] 
 We followed the pre-registered analysis plan for each experiment, although accuracy models were not explicitly specified until Experiment 3, and linguistic analyses were only verbally described starting with Experiment 2b. 
 Results from some pre-registered models are omitted from the main text for brevity but are shown in the SI.

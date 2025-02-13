@@ -1,7 +1,14 @@
-# Kids
+# Developmental origins
 
 
 ```{r preschool-setup, include=FALSE}
+knitr::opts_chunk$set(
+  fig.width = 3, fig.height = 3, fig.crop = F,
+  fig.pos = "tb", fig.path = "figs/",
+  echo = F, warning = F, cache = F,
+  message = F, sanitize = T
+)
+
 library(png)
 library(grid)
 library(ggplot2)
@@ -29,7 +36,7 @@ source(here("kids/code/paper_helper.R"))
 
 Learning a language requires learning not only the content of that language, but also how to use the language to communicate. One case study for language use is referential communication, the ability to describe a target so an interlocutor can pick it out from a set of possibilities. Adults show sensitivity to both the visual context and their audience during referential communication, calibrating the description they provide to their beliefs about the interlocutor's knowledge state. 
 
-Iterated reference games provide an important paradigm for studying referential communication. In these games, one player repeatedly describes a set of abstract shapes to a partner so they can identify the target images [@clark1986; @krauss1964; @hawkins2020b; @boyce2024]. Over repetition, features of the initial descriptions are conventionalized as each pair comes to agree on a shared understanding of how to label each image. Success at this task requires mastery of a number of linguistic and communicative skills, including producing adequate initial descriptions, monitoring for comprehension, asking for clarification, and appropriately using the shared conversation history to inform later referring expressions. 
+Iterated reference games provide an important paradigm for studying referential communication. In these games, one player repeatedly describes a set of abstract shapes to a partner so they can identify the target images [@clark1986; @krauss1964; @hawkins2020; @boyce2024]. Over repetition, features of the initial descriptions are conventionalized as each pair comes to agree on a shared understanding of how to label each image. Success at this task requires mastery of a number of linguistic and communicative skills, including producing adequate initial descriptions, monitoring for comprehension, asking for clarification, and appropriately using the shared conversation history to inform later referring expressions. 
 Studying how children play iterated reference games can provide insight into the developmental trajectory of the ability to produce referential expressions in order to achieve joint understanding. 
 
 One influential early study suggested that 4-5-year-old preschoolers struggle with child-child referential communication [@glucksberg1966]. In their paradigm, one child was given a set of 6 blocks in a specific order. Their task was to describe the image on each block so their partner could pick out their corresponding block. As children described and selected blocks, they stacked them on pegs. While 4-5-year-old children succeeded on practice trials with familiar shapes and visual access to each other's blocks, children failed on critical trials where the blocks had abstract drawings and there was no visual access. Even after multiple rounds with the same images, children were not able to correctly order the blocks. @glucksberg1966 attributed children's communicative failures to their production of ego-centric descriptions that did not account for the other child's perspective.  
@@ -38,7 +45,7 @@ Similar experiments with older children indicated a gradual improvement through 
 
 
 
-```{r interface, fig.env = "figure*", fig.pos = "t!", out.width="\\textwidth", fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Experimental setup and procedure. Panel A shows the experimental setup. Panel B shows the 4 possible targets; names for targets are for cross-reference with later figures only. Panel C shows the procedure for Experiment 1; within critical blocks targets were ordered randomly. Panel D shows the procedure for Experiment 2. \\label{game}", cache=FALSE}
+```{r interface, fig.env = "figure*", fig.pos = "t!", out.width=".95\\textwidth", fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Experimental setup and procedure. Panel A shows the experimental setup. Panel B shows the 4 possible targets; names for targets are for cross-reference with later figures only. Panel C shows the procedure for Experiment 1; within critical blocks targets were ordered randomly. Panel D shows the procedure for Experiment 2. \\label{game}", cache=FALSE}
 
 knitr::include_graphics(here("kids/diagram.pdf"))
 
@@ -89,7 +96,7 @@ Statistical analyses were run in brms [@burkner2018] with weakly informative pri
 ### Results
 #### Accuracy and speed
 
-```{r fig-accuracy, fig.env="figure", fig.pos = "t", fig.align = "center", out.width="100%", fig.width=5, fig.height=3, fig.cap = "Children's accuracy at selecting the correct target over time. Error bars are bootstrapped 95% CIs with a linear trend line overlaid. \\label{acc}" }
+```{r fig-accuracy, fig.env="figure*", fig.pos = "t", fig.align = "center", out.width=".95\\textwidth", fig.width=5, fig.height=3, fig.cap = "Children's accuracy at selecting the correct target over time. Error bars are bootstrapped 95% CIs with a linear trend line overlaid. \\label{acc}" }
 clean_2 |>
   filter(type != "practice") |>
   mutate(trial = trial - 3, expt = "Expt 2") |>
@@ -138,7 +145,7 @@ As another measure of children's performance, we looked at how long children spe
 
 #### Description length
 
-```{r description, fig.env="figure", fig.pos = "t", fig.align = "center", out.width="100%", fig.width=5, fig.height=3, fig.cap = "Length of description produced by the teller each trial. Grey dots are individual data points, colored dots are per trial means with bootstrapped 95% CIs. \\label{length}" }
+```{r description, fig.env="figure", fig.pos = "t", fig.align = "center", out.width=".95\\textwidth", fig.width=5, fig.height=3, fig.cap = "Length of description produced by the teller each trial. Grey dots are individual data points, colored dots are per trial means with bootstrapped 95% CIs. \\label{length}" }
 clean_2 |>
   filter(type != "practice") |>
   mutate(trial = trial - 3, expt = "Expt 2") |>
@@ -171,13 +178,13 @@ description_mod_1 <- read_rds(here(mod_results, "description_1.rds"))
 description_form <- read_rds(here(mod_form, "description_1.rds"))
 ```
 
-In iterated reference games with adults, description lengths usually shorten over repeated references [@clark1986; @hawkins2020b; @boyce2024]. We were curious if children's descriptions would display the same trend, so we ran a Bayesian mixed effects linear regression predicting the number of words in the description the "teller" produced.^[`r description_form |> form()`] On the first critical trial, descriptions averaged `r stats_text(description_mod_1, 1)` words, and description length was relatively stable over time (change of `r stats_text(description_mod_1, 2)` words per trial, Figure \ref{length}). Thus, children's increasing speed was not from shorter utterances, but instead from some combination of improved task understanding, faster utterance planning, and faster decisions of what to select.
+In iterated reference games with adults, description lengths usually shorten over repeated references [@clark1986; @hawkins2020; @boyce2024]. We were curious if children's descriptions would display the same trend, so we ran a Bayesian mixed effects linear regression predicting the number of words in the description the "teller" produced.^[`r description_form |> form()`] On the first critical trial, descriptions averaged `r stats_text(description_mod_1, 1)` words, and description length was relatively stable over time (change of `r stats_text(description_mod_1, 2)` words per trial, Figure \ref{length}). Thus, children's increasing speed was not from shorter utterances, but instead from some combination of improved task understanding, faster utterance planning, and faster decisions of what to select.
 
 Some examples to illustrate the variety of effective descriptions children employed are shown in Table \ref{example} (these specific examples are from Experiment 2, but both experiments had similar distributions of descriptions). 
 
 #### Convergence 
 
-```{r sims, fig.env="figure", fig.pos = "t", fig.align = "center", out.width="100%", fig.width=5, fig.height=3, fig.cap = "Semantic similarity between pairs of descriptions from different sources. Dots are means and lines are bootstrapped 95% CIs.  \\label{sim}" }
+```{r sims, fig.env="figure", fig.pos = "t", fig.align = "center", out.width=".95\\textwidth", fig.width=5, fig.height=3, fig.cap = "Semantic similarity between pairs of descriptions from different sources. Dots are means and lines are bootstrapped 95% CIs.  \\label{sim}" }
 sims_2 |>
   mutate(source = case_when(
     speaker1 == speaker2 ~ "same teller",
@@ -333,7 +340,7 @@ As Experiment 2 had 4 blocks, we examined whether descriptions were converging s
 
 Partnerships often diverged from one another as groups focused on distinct aspects of the image. We tested whether descriptions in different games diverged over time using a Bayesian mixed effects linear regression.^[`r sim_across_form |> form()`] As the games progressed, descriptions to the same target from different games became slightly less similar (`r sim_across_2_results |> stats_text(2,3)`), which indicates that games are converging to different conventions. These patterns of increasing similarity within games and increasing divergence between games qualitatively match the patterns found for adults [@boyce2024]. 
 
-```{r sim2, fig.env="figure", fig.pos = "t", fig.align = "center", out.width="100%", fig.width=5, fig.height=3, fig.cap = "Semantic similarity between descriptions from earlier blocks (1-3) and the last block in Experiment 2.  Heavy dots are means with bootstrapped 95% CIs; light dots are individual values. \\label{tolast}" }
+```{r sim2, fig.env="figure", fig.pos = "t", fig.align = "center", out.width=".95\\textwidth", fig.width=5, fig.height=3, fig.cap = "Semantic similarity between descriptions from earlier blocks (1-3) and the last block in Experiment 2.  Heavy dots are means with bootstrapped 95% CIs; light dots are individual values. \\label{tolast}" }
 sims_2 |>
   filter(game1 == game2) |>
   mutate(later = ifelse(block1 > block2, block1, block2), earlier = ifelse(block1 > block2, block2, block1)) |>
@@ -399,7 +406,7 @@ Across 2 experiments and 51 pairs of 4 and 5-year-old children, we tested how we
 
 Unlike adults, children did not display an increase in accuracy or a shortening of referential expressions over the course of the game. Still, our findings show that descriptions became increasingly similar to descriptions in the last block and that successful utterances were more similar to future utterances, suggesting that children are adapting their descriptions as the game unfolds. These null findings are likely a result of initially high accuracy in the first block and initially short utterances that leave little room for reduction. 
 
-It is unclear to what extent the uniformly short descriptions we observed are a product of the simplified task or children's behavioral differences from adults. In this case, the low number of options and relatively easy-to-describe shapes may have obviated the need for long initial descriptions. Indeed, adult controls in @leung2024 used shorter initial descriptions than adults in studies with larger arrays of harder to distinguish images [@hawkins2020b; @boyce2024]. However, young children may also struggle to produce longer descriptions, and young children may be more willing to take guesses when adults would seek additional clarification. Especially in light of other work suggesting that conceptual pact formation and reduction in utterance length sometimes decouple in adults [@boyce2024], further empirical work on the factors driving verbosity in reference games is warranted. 
+It is unclear to what extent the uniformly short descriptions we observed are a product of the simplified task or children's behavioral differences from adults. In this case, the low number of options and relatively easy-to-describe shapes may have obviated the need for long initial descriptions. Indeed, adult controls in @leung2024 used shorter initial descriptions than adults in studies with larger arrays of harder to distinguish images [@hawkins2020; @boyce2024]. However, young children may also struggle to produce longer descriptions, and young children may be more willing to take guesses when adults would seek additional clarification. Especially in light of other work suggesting that conceptual pact formation and reduction in utterance length sometimes decouple in adults [@boyce2024], further empirical work on the factors driving verbosity in reference games is warranted. 
 
 The generalizability of our results is limited by the target population, the target images, and the task structure. We sampled a convenience population of children at a university nursery school. The set of tangram images may be easier to distinguish and have higher codability than other target images used in adult reference games. We specifically targeted children's abilities to construct referring expressions that can be jointly understood, so children were provided scaffolding around taking turns and talking to their partner. Thus, children's performance should be taken as a proof-of-concept about ability, rather than a claim about how generally children spontaneously demonstrate these abilities. 
 

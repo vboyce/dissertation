@@ -30,19 +30,20 @@ abstract: |
 # If you'd rather include the preliminary content in files instead of inline
 # like below, use a command like that for the abstract above.  Note that a tab 
 # is needed on the line after the `|`.
-acknowledgements: |
-  I want to thank a few people.
-dedication: |
-  You can have a dedication here if you wish. 
+#acknowledgements: |
+#  I want to thank a few people.
+#dedication: |
+#  You can have a dedication here if you wish. 
 #preface: |
 #  This is an example of a thesis setup to use the reed thesis document class 
 #  (for LaTeX) and the R bookdown package, in general.
 # Specify the location of the bibliography below
-bibliography: [bib/arrgh.bib, bib/mpt.bib, bib/preschool-tangrams.bib, bib/tg-matcher.bib]
+bibliography: [bib/dissertation.bib]
+#, bib/mpt.bib, bib/preschool-tangrams.bib, bib/tg-matcher.bib]
 # Download your specific csl file and refer to it in the line below.
 csl: csl/apa7.csl
-lot: true
-lof: true
+lot: false
+lof: false
 ---
 
 ```{r global_options, include=FALSE}
