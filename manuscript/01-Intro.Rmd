@@ -1,5 +1,73 @@
+
 # Introduction: Towards formal theories and computational models of evolving referents to unfamiliar targets
 
+
+## Outline notes
+
+Interested in how we use language to communicate. (how else would we use language?)
+
+
+"language in context" 
+what the pressures on on utterances -- informativity, availability, 
+how language & context interact -- non-"literal" uses of language, information value in the extra-textual or sub-textual ways
+pragmatics writ large -- conveying information beyond the literal meaning < -- what do you call this because if I say pragmatics some people think scalar implicature (or implicature generally) 
+
+flexibility of language use (both production and comprehension) -- add new meanings, new words, adapt to circumstances 
+
+interested in production and processing (processing is easier) with these
+
+language is a very rich code and is an avenue for seeing various human skills because of the shared suite of tools 
+
+------
+Language as a tool for communication & the role of context & adaptation to context in language use: 
+* broad topic
+* "nothing is all that special" <-- no theoretic primacy to any particular form including conversation or even language (compared with other modalities)
+* messy -- easy to observe, harder to characterize, and harder still to computationally model 
+* situated between a number of different fields 
+	* language evolution / cultural evolution / how new usages enter a lexicon <-- difficult to observe IRL
+	* pragmatics (but this means different things to different people) 
+	* "mechanics" of processing and production
+	* "inference" where are we on the language <-> wordplay spectrum 
+	* conversation & social interaction 
+
+In dissertation, we focus on a specific type of experimental design that it meant to elicit context-dependent creative language use & convention formation and thus is a useful testbed for studying different dimensions of pragmatics. 
+
+Here, we review what some of the key relevant questions and theories are. To preview, we will find that a lot of things don't quite line up and don't provide satisfying answers in part due to lack of specificity (i.e. lack of caching out models into something that makes clear predictions). 
+
+Connect this to two+  broader traditions (not mutually incompatible) that could serve to unify: efficiency pressures as a key part of language & Bayesian reasoning & (?) something about information content as a key to processing? 
+
+One conclusion is that we don't have as much data as we want. The broad patterns we're trying to explain aren't explored as deeply as we would want for an eventual computational-level explanation.  Want a broader picture of the target of explanation -- will already be able to suggest which ideas present in verbal theories are more or less reasonable, and lay out an empirical foundation that could be strong enough to support eventual testing of computational theories. 
+
+Within the microcosm of iterated reference games, we pull back the curtain in a few directions. 
+
+In the one chapter, we test out different group dynamics, including size and communication channel capacity and feedback -- all dimensions of group coherency. This gives a test of the implicit claims of the approaches that claim dyadic and conversational primacy. It also allows a test for how entangled different reduction phenomena are. Report on XXX participants
+
+In another chapter, we go to the developmental origins of this stuff, revisiting some claims that children can't do this (which have come to be fairly incompatible with much of the developmental literature). Report on YYY participants
+
+one place where context dependent language (changing language & out of typical distribution language) is on display is in iterated reference games 
+* a microcosm for seeing coordination using language to communicate
+* and seeing linguistic conventions (enhanced or new meanings) 
+
+A lot of exploration of ref games has been localized to specific places because of the theories and questions that were of interest and I'm interested in seeing the broader picture -- look at this from more angles to get a better understanding of what the thing we're trying to explain is. 
+
+* why no computational model Veronica? --> it's pretty rich and complicated and parts of this make testing a model at scale hard (and creating a testable generative-y model hard) 
+	* am interested in thinking about that, but I think we can start by testing some bounds on the (verbal) theories to get a lay of the land
+	* also sets up what ways a model needs to be expandable ()
+
+taking the peep hole and pulling it in various directions (or whatever) 
+
+* different group dynamics -- size, channel (is there are dyadic primacy thing as some have claimed) -- what are the slopes 
+	* at some point there's an understanding vs inferring <-- maybe this is a real difference, idk, but going to need tight time course and/or (and?) neural to get at ; my guess is there's a sufficient continuum that we shouldn't split hairs over it 
+* "time scales" -- developmental time 
+	* also starts to tell us what different skills are involved here
+* how partner-specific / arbitrary / how far have we drifted from default semantics 
+	* naive partners (+ models)
+		* constrains what we mean when we make efficiency claims 
+		* provides a different way of potentially approaching modeling this -- semantic drift? / lexical uncertainty 
+	* also there's processing angle / information distribution -- go in to the text which we did a bit of but kind of badly 
+	
+	
+## Old
 	%TODO FOR LATER an example can strengthen this kind of abstract info and make it more concrete
 
 	
