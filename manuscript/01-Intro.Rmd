@@ -130,7 +130,7 @@ As I go through different theories and phenomena, I will consider the available 
 
 One historically important distinction that recurs with conversation, and interactions between agents more generally, is whether and how agents track other agents internal states of knowledge and how this factors into their interaction. While an intuitively appealing distinction, it's not clear how to test this. 
 
-One could build, for instance, model-based and model-free algorithms and then compare which better captures an observed phenomenon, but this seems to harken back to associationist versus rule-based accounts in linguistics, which don't seem as relevant now. These aren't opposites so much as points on a sprectrum and appearances may also be decieving -- what looks rule based could be instantiated in a non-symbolic, associationist way. On the other hand, a more sophisticated approach could look more associationist under performance load. %TODO citations
+One could build, for instance, model-based and model-free algorithms and then compare which better captures an observed phenomenon, but this seems to harken back to associationist versus rule-based accounts in linguistics, which don't seem as relevant now. These aren't opposites so much as points on a sprectrum and appearances may also be decieving -- what looks rule based could be instantiated in a non-symbolic, associationist way. On the other hand, a more sophisticated approach could look more associationist under performance load.
 
 While is it not clear how to test these theories, it is still worth discussing the frameworks for historical reasons. 
 
@@ -145,7 +145,7 @@ However, "common ground" is also sometimes used in a theoretically loaded way, o
 
 Even if we accept that common ground has grown away from it's formal semantic roots to just be a convenient shorthand for "mutual knowledge", there is still a question of how agents know (or decide) what is mutually known. Many approaches have tried to characterize when something is mutually known [@horton1996;@clark1986;@brown-schmidt2012]. This has predominately taken a deterministic approach with rules such as "if it's in shared visual presence, it's mutually known". Visual presence may be a good heuristic, but it seems like whether something is mutually known may be better represented in a more graded way. 
 
-These terms seem to be easily subsumed within a Bayesian inference and Bayesian pragmatics framework. While the "mentalizing" approach places special emphasis on "common ground", it's unclear whether this form of modeling another's knowledge should be treated differently from cases where one models another's knowledge that one does not personally have. For instance, in deciding who to learn from, someone might determine that another agent knows what's behind a door and then use this information to for instance, interpret a quantifier like some.  (TODO cite) 
+These terms seem to be easily subsumed within a Bayesian inference and Bayesian pragmatics framework. While the "mentalizing" approach places special emphasis on "common ground", it's unclear whether this form of modeling another's knowledge should be treated differently from cases where one models another's knowledge that one does not personally have. For instance, in deciding who to learn from, someone might determine that another agent knows what's behind a door and then use this information to for instance, interpret a quantifier like some.  (TODO cite some RSA stuff for this) 
 
 Another implication from the Bayesian approach is that we do not need to deal with deterministic rules and can instead reason under uncertainty. This may be useful for accounting for hedging behavior where there seems to be uncertainty over what an interlocuter will understand. Joint updating can also help for times when something was initially thought to be likely in the shared prior, but then new information decreases this likelihood. The framework of flexible inference and probabilistic knowledge states is a powerful tool. 
 
@@ -163,9 +163,7 @@ There are a few issues with this theory. For one,  it is unclear that structural
 Perhaps the largest problem with interactive alignment theory is that it does not account for one of the key features of iterated reference games:  that people converge to conventionalized referring expressions that evolve and shorten after both people understand each others expressions. Thus, one requires an explanation for change, not just repetition or mimicking. To my knowledge, interactive alignment does not have an explanation for this, in part perhaps because their studies tend to be of a different sort. The "common ground" tradition generally using asymmetric director/matcher designs (dating back to at least \citet{krauss1966]) and the "interactive alignment" traditions using symmetric designs such as the `maze' task. Thus it is possible the two approaches are build around trying to explain differing sets of experimental results. 
 
 
-Figuring out exactly what alignment happens in conversation may well be worthwhile, but it does not seem that useful for the phenomena in iterated reference games in particular. As the iterated reference game is mostly used within the mentalizing tradition, most of the theories discussed will also belong to that tradition. That said, even within mentalizing theories, the actual implementations are unlikely to be full inference. 
-[do we want to mention that there are actually interesting results with memory issues and what iter ref games say about memory formation?]
-%TODO not sure if info theory or efficiency have much to say about this
+Figuring out exactly what alignment happens in conversation may well be worthwhile, but it does not seem that useful for the phenomena in iterated reference games in particular. As the iterated reference game is mostly used within the mentalizing tradition, most of the theories discussed will also belong to that tradition. That said, even within mentalizing theories, the actual implementations are unlikely to be full inference. One way to explore this would be with approximations of full Bayesian inference in the resource-rationality tradition or with information theoretic limits on memory capacity that don't allow for full partner representation. 
 
 
 ### [x] Partner specificity
@@ -176,8 +174,10 @@ Empirical evidence from experiments where one director talks with multiple partn
 
 This pattern could be efficient if the context from the initial utterances is requisite to understand the later parts. The jagged pattern in particular is suggestive of a mix of speaker production effort and shaping the matcher's lexicon. If we consider the elaborated and shortened forms of the concepts (ex "arms up, like a goalie diving for a ball" versus "goalie") to be synonyms (in the same way chimp and chimpanzee are synonyms), then the switch to short form after establishment and the temporary switch back with a new listener could be explained under a uniform information density model, provided that the longer form occurs in a context when it is more surprising and informative [CITE GIBSON paper]. This raises the questions of how to think about information in reference games, when in some sense, at most 3.5 bits of information are needed for a 12 way choice. We will return to the issues of surprisal and informativity in reference games at the end of the introduction. 
 
-Partial pooling and partner specificity can be instantiated in a hierarchical model of Bayesian pragmatics, such as those introduced in CHAI or lexical uncertainty models. Testing out these model frameworks with natural language data is not yet tractable due to the need to figure out computational and semantic issues. 
+Partial pooling and partner specificity can be instantiated in a hierarchical model of Bayesian pragmatics, such as those introduced in CHAI or lexical uncertainty models. Testing out these model frameworks with natural language data is not yet tractable due to the need to figure out computational and semantic issues, but the models seem to provide coverage at least in theory. 
 
+
+How can we think of partner specificity from an information-theroretic lens? One approach might be to think about what the mutual information is between the conversation history, the current utterance, and the visual context of targets. Within a partnership, the conversation history can serve as a sort of encoder that allows later conversational elements to use a more efficient coding to map between language and referent. Under partner specificity, one would say that condition on conversation history, the target and convention predict each other, but that conditioned on no history or a different conversation history they would not predict each other. This abstracts over having a model of how conversation history unfolds, but it's at least an operationalization that could be testable using machine learning models. 
 
 
 ### [x] Audience design & effort sharing
@@ -211,7 +211,7 @@ One source of evidence about the potential optimality is whether other people (n
 
 It certainly suggests that from a purely audience design listener-focused perspective, speakers are not efficient, in that to the extent that new people can understand later utterances without context, a counterfactual more rapid adoption of short forms is likely to be able achieve a certain level of accuracy just as well as the observed pattern. This is an area that could benefit from empirical work around what the optimal pattern could be. There are also some alternative auxiliary hypotheses that could save the efficiency idea before we are forced to conclude that humans are miscalibrated. One possibility is that the communicative bottleneck is firmly on the production side -- speakers are doing the best they can to rapidly produce descriptions, and producing more succinct descriptions earlier would be too costly in terms of effort or time. Another possibility is that social norms and task dynamics dissuade the use of short form descriptions even if they are likely to be understood, perhaps the initial descriptions are more polite, or perhaps people are cautious in their efficiency/accuracy trade-offs. 
 
-
+Bayesian pragmatic models could be extended to cover situations discussed here. Rather than just communicate pragmatically with one person, balancing multiple people's needs would require balancing different goals. Again the difficulty of specifying base interpretations and compositionality and reasoning may pose some difficulties, but a toy model of the situation could work. Similarly, a lexical uncertainty Bayesian pragmatics model would be an approach to capturing the new listener behavior in eavesdropper scenarios. In terms of effort splitting, that could also at least in theory be represented by changing RSA parameters such as depth of reasoning, starting lexical semantics, or cost functions. 
 
 ### [x] Convention formation 
 One of the key phenomena of interest with iterated reference games is that
@@ -225,6 +225,7 @@ The semantic meaning of a description is not a priori related to its length, but
 
 It remains an empirical question whether the shortening of utterances, convention formation, and partner-specificity of descriptions are inseparable or merely occur together in the experimental paradigms considered in the literature. 
 
+From an information-theoretic perspective, we can think of convention formation as convergence towards a modified encoding that is more efficient at representing the specifc set of target meetings that the baseline language. These are not meanings that are not usually commonly needed and thus don't have initially high codeability, but over local usage, a (temporary) warp of the meanings can be achieved that is locally more optomized to express the target meanings. 
 
 #### [x] CHAI models
 
@@ -266,104 +267,40 @@ If we had a computational model of adult performance, the question would be what
 
 If we take efficiency to mean an optimal tradeoff between expressivity and effort, then children might have different weightings between the two, ending up on a different frontier or a different part of the frontier. For instance, cogntive capacity constraints, or things like working memory or executive control could mean that certain types of utterances are particularly effortful, and thus shift the optimal curve to include less expressive utterances. For child -- adult dyads, the shift in speaker / listener capacity may be substantially different than for adult - adult dyads, rendering different approaches more efficient. This may be difficult to test since it would require figuring how where the bottlenecks are empirically, or having good enough models to compare fits to the data. 
 
+Maybe we can concieve of communication channels involving children as being extra noisy or as having more limited channel capacity. 
+
 ### [.] Incremental approaches to processing and production
 
-Another angle from which to view reference is from the fine grained time course. As a referring expression is incrementally processed, what is the listener doing? How early do affects related to speaker identity or pragmatics occur? 
+Another angle from which to view reference is from the fine grained time course. As a referring expression is incrementally processed, what is the listener doing? How early do effects related to speaker identity or pragmatics occur? 
 
 The typically approach to understanding the unfolding of comprehension in real time is via visual world eye tracking where looks are interpreted as meaning to potential targets. Alternative methods to get at incremental interpretation and processing difficulty can also be used. 
 
-One idea that visual world approaches to reference try to address is whether there is an initial stage that differs from the final resolution. For instance, certain influences like the literal meaning of the utterance might be available sooner than pragmatics or more contextualized interpretations.  This is sometimes characterized as "top-down" versus "bottom-up" but there may also be different sources. Modern consensus is that prediction is kind of always going on in the mind and thus that very little is purely bottom up with expectations from larger linguistic structures shaping even perceptual things. 
+One idea that visual world approaches to reference try to address is whether there is an initial stage that differs from the final resolution. For instance, certain influences like the literal meaning of the utterance might be available sooner than pragmatics or more contextualized interpretations.  This is sometimes characterized as "top-down" versus "bottom-up" but there may also be different sources such as linguistic context or social context or visual access.
 
-The idea of an egocentric first stage doesn't mesh well with bigger picture evidence that prediction is everywhere and that this "top-down information" can affect even early stages of language processing such as phoneme identification and lexical processing [@gwilliamsdavis, @gwilliams]. Predictive coding is a theory with good coverage of neural evidence in many domains, including language, with language processing regions seemingly sensitive to both lexical and structural information in predicting upcoming words [@shainfmri].  However, we might still wonder if earlier behavioral readouts are more influenced by perceptual information and less pragmatic, or if cognitive load also sways the balance of influence.  
+The relative balance and time course of top-down and bottom-up influences has been a big question in psycholinguistics and neurolinguistics for a long time [@gwilliams2022;@tanenhaus1995;@horton2005;@horton1996]. One debate in particular, in the (non-iterated) reference game literature specifically concerned the role of egocentrism in the early stages of linguistic processing. One side of the debate was the Egocentric Anchoring and Adjustment theory, where @keysar2000 argued for an initially egocentric perspective on the basis that people often initially look at objects that are good matches to a description even if the object is not mutually visible to the speaker [see also @hortonkeysar1996, @keysar2003, @barrkeysar2007]. In particular, this theory claims a two-stage model where there is an initially (completely) egocentric perspective that can later be overcome, in contrast to the (much less controversial) idea that there is a general egocentric bias where one of the sources of information is egocentric but it can be in parallel to theory of mind information [@rubio-fernandez]. The ego-centric first claim rests on a couple dubious linking hypotheses: that if people consider an interlocuters perspective, their prior should be that the interlocuter only refers to mutually known things;  and separately, that looking at an object is a sign that it is considered a potential referent [eye-tracking data is widely interpreted this way, but there is evidence that this proxy is only approximate, @degena]. Their studies also always had the egocentric-only lure be extremely salient, by making it by far the best match to the description. 
 
-One large question in language processing and production broadly is what the relative balance of bottom-up and top-down influences are [@gwilliams2022;@tanenhaus1995;@horton2005;@horton1996].
-In the (non-iterated) reference game literature, there has been substantial investigation of egocentrism in early stages of processing. 
+The counterpoint to initial ego-centrism presented by [@hanna2003] is a constraint-based theory where many factors can play into comprehension [ see also Nadig & Sedivy 2002, Hanna, Tanenhaus & Trueswell 2003, Hanna & Tanenhaus 2004, Tanenhaus & Brown-Schmidt 2008] . Many factors may influence language production and comprehension, to varying extents, and on differing time courses. Their studies use egocentric lures that are equivalently good to the shared visibility target and find early perspective taking, and confirm this with other experiments in different paradigms. TODO more citations
 
-One theory in particular that received much argument is Egocentric Anchoring and Adjustment, where @keysar2000 argued for an initially egocentric perspective on the basis that people often initially look at objects that are good matches to a description even if the object is not mutually visible to the speaker [see also @hortonkeysar1996, @keysar2003, @barrkeysar2007]. In particular, this theory claims a two-stage model where there is an initially (completely) egocentric perspective that can later be overcome, in contrast to the (much less controversial) idea that there is a general egocentric bias where one of the sources of information is egocentric but it can be in parallel to theory of mind information [@rubio-fernandez]. 
+The larger picture of language processing and neuroscience strongly suggests that context information (at least from linguistic context) is used to predict upcoming linguistic material, and thus that "top-down" information can affect even early stages of linguistic processing such as phoneme identification and lexical processing [@gwilliamsdavis, @gwilliams]. Predictive coding is a theory with good coverage of neural evidence in many domains, including language, with language processing regions seemingly sensitive to both lexical and structural information in predicting upcoming words [@shainfmri].  However, we might still wonder if earlier behavioral readouts are more influenced by perceptual information and less pragmatic, or if cognitive load also sways the balance of influence. 
 
-The ego-centric first claim rests on a couple dubious linking hypotheses: that if people consider an interlocuters perspective, their prior should be that the interlocuter only refers to mutually known things;  and separately, that looking at an object is a sign that it is considered a potential referent [eye-tracking data is widely interpreted this way, but there is evidence that this proxy is only approximate, @degena]. Their studies also always have the egocentric-only lure be extremely salient, by making it by far the best match to the description. 
-
-The counterpoint to initial ego-centrism presented by [@hanna2003] is a constraint-based theory where many factors can play into comprehension [ see also Nadig & Sedivy 2002, Hanna, Tanenhaus & Trueswell 2003, Hanna & Tanenhaus 2004, Tanenhaus & Brown-Schmidt 2008] . Many factors may influence language production and comprehension, to varying extents, and on differing time courses. Their studies use egocentric lures that are equivalently good to the shared visibility target and find early perspective taking, and confirm this with other experiments in different paradigms. TODO CITE
-
-Could mention that time course approaches could also be helpful in understanding role of context in iterated expts TODO
-
-\--> things are a lot more predictive than previously thought & there’s a lot of top-down lnfluence at least within language, contrastive adjectives
-
-still a question of how online parts of pragmatics are?
-
-- visual world stuff shows some context effects on early processing (lexical start candidates)
 
 ### [.] Production constraints
 
-Compared to the theoretic landscape around psycholinguistic processing, production is much less studied because it's a lot harder to study. 
+Compared to the theoretic landscape around psycholinguistic processing, production is much less studied because it's a lot harder to study experimentally. 
 
-There is agreement that production consists of some sort of conceptualization, formulation and articulation stages, but that is about all that is agreed upon [@burki]. From interference studies, we can get some sense of when certain elements in sentences are planned [CITE]. 
+There is agreement that production requires conceptualization, formulation, and articulation, but that is about all that is agreed upon [@burki]. From interference studies, we can get some sense of when certain elements in sentences are planned [CITE]. On a word level, the phonological realization of words that are more frequent or usually appear in more predictible contexts is reduced relative to words that usually convey more information [@burki]. This could be consistent with either a production facilitation account or an audience design account -- speaker and listener language statistics are similar so it is difficult ot disentangle. For production beyond the scale of single words, that are just more questions, including what the planning looks like, how the time courses of different stages of production may overlap, and what size and types of units are stored in memory [@burki]. There's a lot we don't know about the mechanics of production even in situations with less context-sensivity than iterated reference games. 
 
+As with behavioral measures, neuroscience measures are also used more for processing than for production and articulatory processes are better studied than the higher level planning processes. FMRI studies indicate that language production tends to activate the same regions as language processing (unsurprisingly), but these regions are especially active during phrase structure building, suggesting that production may have higher costs than comprehension [@hu]. However, fMRI does not have precise time course resolution, so it can't resolve questions of how information flows in the brain. 
 
-- Burki
-    
-    - conceptualization / formulation / articulation (this seems relatively unobjectionable, but do we know how discrete the stages are)
-        
-    - beyond that there’s disagreement
-        
-    - there’s some empirical work on how far ahead things are planned (structurally)
-        
-    - with pronunciation stuff based on all sorts including frequency and predictability -- is that audience design, or production facilitation
-        
-    - how does information flow -- we don’t know
-        
-    - what’s the balance of speaker internal and audience design and how the heck could we measure/model this?
-        
-    - more than just words:
-        
-        - planning
-            
-        - time course of different levels
-            
-        - units in memory
-            
+The increased load from production is consistent with accounts that suggest that utterance design (and language evolution) are substantially shaped by biases to easy production. @macdonald2013 points out three production biases: easy first, plan reuse, and reduce interference that could explain some patterns of utterance production, including in reference games [@macdonald2013]. 
 
-- futrell info-theory in incremental lang production
-    
-    - applies Rate Distortion Theory of Control
-        
-    - computational level model on speaker-side? stuff for incremental production
-        
-    - balancing between good for the goal and predictable (~ automatic/usual production)
-        
-    - mostly tested in limited cases around goals and production ordering
-        
-    - as with other info theory -- explains a number of factors in qualitatively or toy quant ways -- scale up is the question
-        
-    - has some compatibility with algo level things in more limited domains
-        
+One approach to identifying speaker-side difficulties in iterated reference games is to lok for disfluences [@yoon2014]. Intuitively, producing descriptions of abstract figures is difficult and there may be load based on task difficulty that leads to non-optimal productions (ex using "square head" as part of a description when it is not diagnostic) that are reminiscent of children's describe/identify difficulties. 
 
-- Hu et al on production neuro:
-    
-    - production just isn’t studied as much, articulation is better characterized
-        
-    - language production overlaps with language comprehension (no duh)
-        
-    - production especially phrase structure building uses a lot -- suggestive of a higher cost for production than comprehension
-        
-    - but it’s fmri so not time course
+There are approaches one could take to try to understand more what production-side pressures are, including time-course locked measures such as eye-tracking and disfluency analysis. Carefully controlled studies and comparisons to monolog conditions may also help. Varying time pressure or pre-articulation planning time could also be used to help sort out what's going on [@horton1996]. But as the larger questions around production generally show, this is hard to study and may require very careful and clever experiment designs. 
 
-However, production constraints are a big question mark in trying to understand why people produce referring expressions the way they do. There's always the possibility that utterances are produced in a certain way because of production biases such as easy first, plan reuse, and reduce interference may produce deviations rather than because of speaker goals of informativity or pragmatics or audience design [@macdonald2013]. 
+What do the broader coverage frameworks have to say about production? Production-side constraints are one of the factors posited to drive linguistic efficiency, but there aren't fleshed out predictions about speakers would or wouldn't say. In general RSA operates on a level of abstraction that only considers entire utterances and so only considers production cost in terms of the utterance sampling procedure (if not all options are considered) and the costs assigned to each utterance. However, given that most iterated reference games allow the speaker to keep talking, one could (again, in theory) adapt incremental RSA (TODO CITE) to explain potential order effects within what parts of descriptions are produced first. 
 
-Especially with low-codability targets, the initial mental generation of any potential referring expression may be a bottleneck. There are empirical challenges with determining what is difficult for speakers to produce, although analyses of disfluencies is one approach [@yoon2014]. Intuitively, producing descriptions of abstract figures is difficult and there may be load based on task difficulty that leads to non-optimal productions (ex using "square head" as part of a description when it is not diagnostic) that are reminiscent of children's describe/identify difficulties. 
-
-Experiments involving time pressure or planning time before utterance initiation could start to sort out if some utterance types are likely to be due to reducing planning. Comparisons to monologue studies could get at what is just production side constraints and what might be audience related. 
-
-Really, one is probably going to want some time-course locked measures, such as eye-tracking to get a sense of what's going on with utterance planning. 
-
-
- On the production side, @horton1996 attempted to test this theory by comparing utterances produced with and without time pressure. They interpret the apparently ego-centric utterances in the speeded condition as evidence that initial utterance planning is ego-centric, but that monitoring and fixing of the utterance may take into account the listener's perspective, and may occur prior to utterance initiation. 
-
-
-
-
-
- 
+One information-theoretic computational-level model of incremental language production comes from @futrellinfotheoryproduction. This model applies the Rate Distorition Theory of Control to production, suggesting a trade-off between incremental steps that are good for the communicative goal (ex. being informative) with what is easy to produce, that is what is more automatic and predictable. As with other information-theoretic models, it has good explanations in toy or qualitative domains for explaining production ordering preferences, the use of filled pauses, and good-enough word production. 
 
 ## Where does this leave us? 
 
@@ -385,6 +322,12 @@ But there is also some seeming production side efficiency looking  stuff in give
 This is all separate from the specific claim of "efficiency" as an informal claim for reference games -- which is more easily testable but won't be conclusive to larger questions. 
 
 ### Bayesian
+
+Bayesian pragmatics is a very promising large-scale framework for explaining a lot of linguistic behavior in context and incorporating history and non-linguistic context into a model of utterance production and comprehension. The main challenge is figuring out how to scale up to handle the natural language that comes up in reference games. 
+
+There are also some modeling considerations for how to extend models to deal with different types of data -- how to deal with multiple listeners simultaneously, how to abstract across items to learn conceputal paradigms (i.e. abstracting from items to an approach of describing images in terms of what the person is doing). One question that comes up with bayesian pragmatic models is how many free parameters they have and whether one is actually getting a parsimonious model with broad coverage, or just a set of related models very tuned to individual datasets. This is a broad issue in modeling and the closer we can get to a generative or cognitive model (even if fairly abstracted) the better. 
+
+However, testability will require a lot of NLP modeling work that is beyond the scope of this thesis. 
 Two potential problems are scaling up to an open vocabulary and free parameters that will lead to high flexibility and a lack of risky prediction [@meehl1990]. The open vocabulary problem is a hard one; rather than wait for a fully realized semantic system, I think one criteria for judging the adequacy of semantic systems is whether they can serve as a linking hypothesis to allow RSA models to predict the patterns of pragmatic language use that are observed experimentally. CHAI, while not a full explanation for the full patterns of real-world data, is a big step forward in at least providing a framework that actually explains why reduction would be optimal. It remains to be seen whether RSA-style models can predict the slope of reduction and the content of words that stay versus drop, but I believe the attempt would push forward our understanding of pragmatics and communication. 
 Even without a cached out model, this approaches can inform how we think about experiments and results. 
 	Another direction where RSA models don't have the capacity to match the type of data from reference games is for non-dyadic reference games. Group communication, either in the form of one speaker - multiple listeners [@yoon2014;@yoon2018;@yoon2019] or network structures [@hawkins2021a], poses a challenge as there is not yet a non-dyadic extension of RSA that can do partial pooling across listeners and jointly optimize for the responses of multiple interlocuters. 
@@ -416,6 +359,9 @@ The communication and reference game literature provides descriptive theories th
 One question that comes up is how "special" are the target phenomena? How purely linguistic? Does it require children? Are there any aspects of the communication that make qualitiative differences (group size, back channel?) 
 
 Want a better map of the empirical landscape, so we know what exactly to try to model. Also, good theories rely on a combination of the right coverage of data, the right computational links/measurements, and the right formalism. The tools for computational links are definitely getting a lot better recently, enabling some analyses to scale and making other analyses possible. However, there is still some gap between matching up computational models to the data. 
+
+
+One feature we may want in models is parameters (or other built in option spaces) that can be tuned to represent differences in games such as number of participants or age of participants or the number of stimuli or their codability or other game features. There is an empirical question whether any of these dimensions (and if so which) produce qualitatively totally different results, like a catastrophic failure that needs a different models to account for. Otherwise, we'd want models that could take different inputs and predict quantitatively different outcomes. The more situation -- outcome data we have the more we could hope to constrain model free-parameters. 
 
 ## [x] Outline of the dissertation
 
