@@ -2,7 +2,39 @@
 
 Wow at some point there will be text that goes here. Isn't that exciting!
 
-## For conclusion
+## Summary of work
 
+Iterated ref games have identified a set of features that usually occur and that may be thought to be part of indexing that coordination and convention formation are occuring. In the work presented in this dissertation, we have sought to broaden the empirical base of evidence, testing to what extend these phenomena occur under different circumstances. This both gets at how variation in group structure and communication channel capacity influence the outcomes, but in comparing patterns across phenomena, we get a chance to see if they can de-couple. In Chapter 2, we saw that all the key phenomena hold over a range of circumstances, but with some quantitative variation generally with smaller games and thicker communication performing better and showing stronger changes over repetitions. The performance metrics of utterance length and accuracy partially de-coupled 
+
+## Limitations
 readdress 		Current statistical models used to assess reduction (or disfluency rate, etc) have the issue that they are fit to a specific dataset and can't be compared across datasets and situations, so it's difficult to assess their quantitative generality [@yarkoni2017]. 
 
+The theories around iterated reference games (and the psycholinguistic theories we borrowed in the introduction) all make claims about language. However, all the experiments I presented, and the majority of those in the literature, were conducted in English. There are a few studies in the literature using other languages, in particular, I am aware of studies in French, Dutch ... ? 
+
+All languages are under pressure to be communicative, and so we'd expect the broad effects to hold regardless of which language is the modality. However, we are missing ways where different languages may have different affordances for how to identify the unknown referents and how to shorten and develop nicknames. To the extent that information ordering may be relevant, that might be different in different languages. 
+
+Given that image iconicity is of relevance, one set of languages that might be particularly interesting could be signed languages, where there are different affordances for modifying signs to indicate modified meanings (TODO citation). 
+
+Studies used convenience populations of crowdsourced adults and children from a university preschool. If there are systemic cultural influences on conceptualizations (the prior over meanings paired with the image) that could influence the types of descriptions and the speed of alignment. In contrast, people who are have less training on say, geometric shape names, might take different approaches. Level of shared cultural background may matter and beyond shared English, we weren't studying that directly, although anecdotally, there were occassional misalignments where one person assumed knowledge of shapes of US states in their descriptions, which was not shared by their non-US based partner. Cultural closeness of speaker and listener could impact this and also impact the eavesdrop potential, but we didn't examine this or try to closely control it. 
+
+Ecological validity: For the most part these reference games aren't directly analogous to the experience. We might play things like them as games (example "Keep Talking and No One Explodes", "Mysterium", "Code Names") etc. What are the situations where this is a reasonable model? One limitations is these are all pure reference, and often IRL reference is embedded within other communicative acts. In other work, there is the suggestion that referential reduction and alignment occur within coordination games (CITE flowers), but it's pretty weak. 
+
+
+
+## Future directions
+
+[refbank]
+* quant functional form
+* robustness / moderators
+* NLP analyses
+Iterated reference games have been used frequently, across some variation of groups and such to study a variety of things. In ongoing work, I am collaborating to harmonize across these datasets, with the goal of mega-analysis. Some questions for instance, regarding quantitative forms of reduction, are best addressed across multiple datasets that vary structural factors such as number of trials or number of targets or type of visual stimuli. Then, we can tell we're not over-indexes on incidental properties of the certain task. 
+
+One of the concerns raised in limitations is that statistical models fit to individual datasets are not comparable across datasets, so it is hard to assess generalizability. One approach is meta-analysis, which combines like effect size measures across different exact experimental implementations. However, given the different measures of interest and different ways of measuring change over time, for iterated reference games, the numerical results are not easy to compare. Instead, we are working on harmonizing data from different datasets where the raw data is available, in order to do mega-analytic statistical measures, combining data across datasets and using data source as a heirarchical moderator. 
+
+Another benefit of acessing data across datasets is checking for robustness to other factors, which we have posited as unlikely to be crucial. For instance, while the conditions reported in Chapter 2 all shared a text-based chat interface and the same set of target stimuli, other experiments from other researchers have used face to face oral paradigms and line drawing stimuli. Thus, applying a mega-analytic approach across multiple datasets allows for estimating the effect from these moderators. In addition to getting robust estimates and measures of generalizability, this could also potentially inform future experimental design, both by points out gaps in the experimental space that has been explored, but also identifying what dimensions of expeirmental variation seem to matter most meaningfully. For instance, one could imagine that type of stimuli has more interacting effects on number of words whereas written versus spoken might just cause an overall decrease without any interactions. One might then decide to one the more convenient modality but focus on varying experimental stimuli more systematically. 
+
+[other NLP]
+One question that has recurred is what is happening with the language? We still have yet to adequately explain how the semantic path of descriptions occurs. There are some predictions that we plan to test, both on the datasets collected here, and on others that are harmonized. We might predict that words that are more distinctive, or more informative, or more iconic are more likely to be preserved. We hope to do future experiments to norm iconicity data and use that as a predictor to help explain results. Also may compare the dyadic descriptions to those from kilogram to get a handle on ideosyncracy. 
+Another future direction, which will be 
+
+## Closing
