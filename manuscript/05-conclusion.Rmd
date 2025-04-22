@@ -1,19 +1,77 @@
 # Conclusion {-}
 
-Wow at some point there will be text that goes here. Isn't that exciting!
 
 ## Summary of work
 
+We started this dissertation around the question of how special the iterated reference phenomena were. Are they best explained by theories centered on these experiments, or can they be subsumed as non-central examples within wider theories? One approach we took here was to test iterated reference games over a wider set of circumstances, to probe how well empirical evidence lines up with the special verbal theories or a wider terrain of smoother variability. 
+
+One observation across experiments is that the central findings of the iterated reference game literature are quite robust. The classic patterns that people create shorthand names for targets as a way to effectively communicate about them and that the details of which nickname are highly varied across groups hold. With "thick" communication channels, similar to those used in much of the literature, but mediated by text instead of in-person, the trends are very consistent with what's known from the in-person dyadic literature. People are just good at communicating, and good at coordinating with each other. 
+
+The interesting part is that some of the classic patterns occur even under more limiting circumstances, which is less consistent. For instance, at least for pairs, people do just fine without much in the way of backchannel. Even for larger groups of 6 people without backchannel and with limited knowledge of performance, accuracy increases and utterances shorten. The descriptions produced under these circumstances are so effective that even naive matchers get them right more than 50% of the time on 12-way choice. In one view, this is robust evidence for our ability to produce and interpret language effectively. In another, it means that maybe common ground and audience design aren't so important if people can succeed without very much of it?
+
+Similarly, we find robust evidence of the path-dependency of what referring expressions are used. Many different descriptions can be effective, and dyads find many of them. Children display similar patterns in miniature -- pairs can use many different conceptualizations effectively. But most of them can be understood reasonably well by others, and many of them are reasonably transparent to models of language statistics, so that complicates the partner-specificity argument. 
+
+We do find quantitative patterns where more communication and more context leads to better performance and faster conventionalization, but it's easy to come up with a theory that predicts that directionally. The hard part is determining *how much* more supportive some circumstances should be than others. 
+
+So, what should we think about human communicative capacities? Some of the ideas that people are really attuned to conversation with a partner and say just the right things for their partner to understand probably aren't true, at least in the strong form. Which is not at all to say that people aren't great at communicating -- we find instead that the communication abilities are wide and flexible. We're also opening up new questions -- how do we explain the path-dependence of people's utterances, and what's going on with production? How do we model the generation process that occasionally leads to very idiosyncratic descriptions and more often results in less idiosyncratic descriptions? How do these patterns relate to iconicity and group dynamics? 
+
+<!--
+Overall, the new evidence presented 
 Iterated ref games have identified a set of features that usually occur and that may be thought to be part of indexing that coordination and convention formation are occuring. In the work presented in this dissertation, we have sought to broaden the empirical base of evidence, testing to what extend these phenomena occur under different circumstances. This both gets at how variation in group structure and communication channel capacity influence the outcomes, but in comparing patterns across phenomena, we get a chance to see if they can de-couple. In Chapter 2, we saw that all the key phenomena hold over a range of circumstances, but with some quantitative variation generally with smaller games and thicker communication performing better and showing stronger changes over repetitions. The performance metrics of utterance length and accuracy partially de-coupled 
 
+Real-world conventions vary in whether they are opaque to outsiders ("rizz") or interpretable even to those who don't produce them ("roundabout"). Convention formation in the real world is difficult to study, so iterated reference games are a method for operationalizing convention formation for experimental study. In reference games, conventions are partner-specific: different groups' evolving conventions follow different paths through semantic space. Despite the number of studies on iterated reference games, few studies have examined whether the descriptions are interpretable by outsiders. 
+
+Across multiple experiments, we found that naïve human matchers were far above chance at identifying the targets, and our computational model was also above chance. For both humans and models, more variation was explained by the target image than the round or game condition the descriptions came from, suggesting that conventionalization was not the primary driver of how difficult an expression was to interpret. Even for games selected for strong conventionalization, naïve matchers had high accuracy overall, although this accuracy was further increased if they saw the conversation history in order. Exploratory analyses also suggested that more idiosyncratic descriptions were more opaque. Our findings are consistent with a lexical uncertainty approach, where expressions that are closer to overall priors are easier to understand, and groups that have fewer people and thicker channels are more able to break away from these priors and have conventions that drift farther apart in semantic space. 
+
+Prominent early studies claimed that young children cannot overcome their ego-centrism to coordinate with each other in reference games [@glucksberg1966]. However, more recent developmental work has found that young children show emerging communicative and pragmatic sensitivity, especially when cognitive demands are low. <!--Recent work has established that children are successful at producing and understanding referential expressions to novel shapes when playing reference games with their parents. Here, we revisited the question of preschoolers' performance in child-child reference games, using a scaffolded paradigm to reduce extraneous task demands. 
+
+Across 2 experiments and 51 pairs of 4 and 5-year-old children, we tested how well children could produce referential expressions that allowed their partner to find a matching abstract shape. Children varied substantially in what sorts of descriptions they produced, but overall accuracy was high (85%), indicating that children were generally able to produce adequate descriptions. Additionally, children's utterances showed signs of converging toward conceptual pacts. While this task is substantially scaled down relative to measures used for adult competence, it does suggest that the relevant communication skills are present at least in rudimentary form by the end of the preschool years. 
+
+Unlike adults, children did not display an increase in accuracy or a shortening of referential expressions over the course of the game. Still, our findings show that descriptions became increasingly similar to descriptions in the last block and that successful utterances were more similar to future utterances, suggesting that children are adapting their descriptions as the game unfolds. These null findings are likely a result of initially high accuracy in the first block and initially short utterances that leave little room for reduction. 
+
+From classrooms to boardrooms, human communication often takes place in multi-party settings. 
+However, experimental research rarely focuses on such settings, largely due to practical obstacles. 
+<!-- Dyadic reference games have been used to measure informational efficiency, characterized by describer-matcher pairs creating conventional (stable but somewhat arbitrary) labels which are not shared by other groups.  
+In the current work, we asked how convention formation processes, typically studied in dyadic reference games, unfold in larger groups and under varying interaction structures. 
+Across 3 online experiments and 11 experimental conditions, we varied multiple features of interaction structure including group size, modality of matcher contributions, and degree of group coherence. 
+All conditions replicated classic dyadic phenomena: increasing accuracy and efficiency, semantic convergence within games, and differentiation of descriptions between groups. 
+However, we also found that the interaction structure substantially affects how rapidly groups develop partner-specific conventions. 
+Small groups may be able to successfully form conventions under limited feedback, but larger groups require thicker interaction structure.
+Multi-player groups may therefore reveal key factors which are masked in purely dyadic settings.
+
+<!-- ## Efficiency without semantic convergence  
+Increasing efficiency, for example, has often been taken as an index of group-specific convention formation [@clark1986; @brennan1996; @yoon2014; @yoon2018]. 
+In our work, however, we observe distinct patterns for measures of raw utterance length compared to the dynamics of semantic content. 
+In Experiment 3, thin 6-person games showed much less group-specific divergence despite comparable accuracy and efficiency.
+This gap raises the possibility that it is possible to become more efficient and accurate without negotiating a unified group-specific label. 
+Instead, they may be relying more strongly on the group's priors [@guilbeault2021]. 
+Thus, we encourage measures of semantic content (and not just performance) when evaluating convention formation. The transcripts for these games provide a rich dataset for exploring different ways language is used to form referential conventions.
+-->
 ## Limitations
+While the work presented in this dissertation pushes forward our empirical understanding of adaptive language use in iterated reference games, there are a set of limitations that should be noted. Some of these limitations apply more generally to the literature as a whole, and thus point to opportunities for future advancement.
+
+First, it must be noted that the generalizability of the work is limited by the generalizability of the stimuli, the participant populations, and the paradigm. 
+
+We used a limited set of 12 vaguely humanoid tangrams in Chapters 2 and 4 and a different set of 4 vaguely humanoid tangrams in Chapter 3. The literature as whole has more variability, so we have no reason to believe that our results are contingent on the stimuli, but features of stimuli are very likely to influence the results via their levels of iconcity, affordances for describing strategies (pose, geometry, body parts), and levels of codeability and discriminability. We are limited in our ability to assess variation due to stimuli because of the small stimulus-level sample. 
+
+Our studies were all conducted in English using convenience populations of adults sourced from crowdworker sites and children sourced from a university preschool. From the literature we have some evidence that the similar patterns of key convention phenomena do occur in other languages (at least $TODO LANGUAGES). To the extent that the paradigm is accessing some general communicative and linguistic abilities, we should expect the general patterns to generalize across demographic factors, languages, and cultures. However, different languages may have different affordances for how to identify unknown referents and and how to shorter and develop nicknames. Typological variation in language might lead different parts of speech to be more common in reduced utterances, for instance. 
+
+As we transition from documenting that humans can use language to communicate under these circumstances and become increasingly consise to trying to model how humans do this, features of the language itself may become more relevant. One blind spot in the literature is with signed languages, which have some different affordances related to iconicity in that modified meanings can be expressed either with additional signs or with modifications to the head signs [CITATION]. 
+
+From a social perspective, we might suspect that social distances, social hierarchies, and social norms could all constrain how games go in this paradigm, but because we did not measure or vary these things, we don't have evidence. We put people in a somewhat artificial "game" environment with specific communication goals, but participants are interacting with people and bring their social knowledge with them. Thus, there are unmeasureable expectations about how we do conversation and unmeasured goals for social connection that could be influencing all of our measures. One could imagine that people with closer connections or different social mores might show some different patterns and quantitative variation. We might be somewhat reassured by general robustness of the underlying patterns to modalities with different social norms (in-person, by phone, and by web-chat) and the fact that some studies don't find differences between friends and strangers. However, while suggestive of some generalizability, we don't actual know for sure. 
+
+Shared society and culture might be particularly relevant to our naive matcher results since guessing the target may depend on shared conceptual interpretations and priors over what the images could represent. 
+
+
+Secondly
+
+* we still don't know causal mechanisms
+
 readdress 		Current statistical models used to assess reduction (or disfluency rate, etc) have the issue that they are fit to a specific dataset and can't be compared across datasets and situations, so it's difficult to assess their quantitative generality [@yarkoni2017]. 
 
 The theories around iterated reference games (and the psycholinguistic theories we borrowed in the introduction) all make claims about language. However, all the experiments I presented, and the majority of those in the literature, were conducted in English. There are a few studies in the literature using other languages, in particular, I am aware of studies in French, Dutch ... ? 
 
-All languages are under pressure to be communicative, and so we'd expect the broad effects to hold regardless of which language is the modality. However, we are missing ways where different languages may have different affordances for how to identify the unknown referents and how to shorten and develop nicknames. To the extent that information ordering may be relevant, that might be different in different languages. 
 
-Given that image iconicity is of relevance, one set of languages that might be particularly interesting could be signed languages, where there are different affordances for modifying signs to indicate modified meanings (TODO citation). 
 
 Studies used convenience populations of crowdsourced adults and children from a university preschool. If there are systemic cultural influences on conceptualizations (the prior over meanings paired with the image) that could influence the types of descriptions and the speed of alignment. In contrast, people who are have less training on say, geometric shape names, might take different approaches. Level of shared cultural background may matter and beyond shared English, we weren't studying that directly, although anecdotally, there were occassional misalignments where one person assumed knowledge of shapes of US states in their descriptions, which was not shared by their non-US based partner. Cultural closeness of speaker and listener could impact this and also impact the eavesdrop potential, but we didn't examine this or try to closely control it. 
 
@@ -38,3 +96,5 @@ One question that has recurred is what is happening with the language? We still 
 Another future direction, which will be 
 
 ## Closing
+
+there's a lot of path dependency here -- 
