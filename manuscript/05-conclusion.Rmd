@@ -86,4 +86,4 @@ Another future direction, which is enabled by the data harmonization efforts, is
  
 ## Closing
 
-
+The approach here has built on many previous studies of language from a variety of subdisciplines. We've drawn from the study of conversation, from sentence processing, from developmental work, and from computational linguistics. Advances in computational methods and experimental methods have enabled this work, and further theoretical and technical connections will lead to further insights. Understanding language deeply requires explaining patterns of language on different time scales and levels of abstraction. I look forward to continuing to explore language use in its duality as a communicative modality and a mental process. 

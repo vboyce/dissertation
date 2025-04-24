@@ -1,10 +1,10 @@
 ---
-title: 'The Future of Scholarship'
-author: 'Mary J. Stanford'
-date: 'May 2018'
-advisor: 'Advisor T. Greatest'
-firstreader: 'L. O. Sunshine'
-secondreader: 'Carl Friedrich Gauss'
+title: 'Constraints on the emergence and interpretability of linguistic conventions'
+author: 'Veronica Boyce'
+date: 'May 2025'
+advisor: 'Michael C. Frank'
+firstreader: 'Laura Gwilliams'
+secondreader: 'Judith Fan'
 department: 'Psychology'
 institution: 'Stanford University'
 knit: bookdown::render_book
@@ -23,14 +23,11 @@ header-includes:
 
 # Remove the hashtag to specify which version of output you would like.
 # Can only choose one at a time.
-output: bookdown::pdf_book
-#  thesisdown::thesis_pdf: default 
+output:
+  thesisdown::thesis_pdf: default 
 
 abstract: |
- I'm an abstract right here, look at me!
-# If you'd rather include the preliminary content in files instead of inline
-# like below, use a command like that for the abstract above.  Note that a tab 
-# is needed on the line after the `|`.
+  `r if(knitr:::is_latex_output()) paste(readLines("00-abstract.Rmd"), collapse = '\n  ')`
 #acknowledgements: |
 #  I want to thank a few people.
 #dedication: |
