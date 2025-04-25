@@ -1,5 +1,7 @@
 
 # Introduction: Computational psycholingistic approaches applied to understanding convention formation in iterated reference games
+
+\chaptermark{Introduction}
  
 ## Motivations and definitions
 The use of language is one candidate for what distinguishes humans from other species. Language enables coordination between individuals, enforcing social norms via gossip, and communicating of complex and abstract ideas which allows for the cultural accumulation of technologies beyond what any one mind could come up with. Especially with the technological innovation of writing, language allows for communicating across long distances of space and time. 
