@@ -1,5 +1,7 @@
 
-# Opacity and processing 
+# Idiosyncratic but not opaque: Linguistic conventions formed in reference games are interpretable by naïve humans and vision–language models
+
+\chaptermark{Opacity of conventions}
 
 ```{r bad-ideas-options, include=FALSE}
 knitr::opts_chunk$set(
@@ -44,19 +46,20 @@ source(here("bad-ideas/analysis-code/helper_cogsci.R"))
 
 ## Introduction
 
-When a teen says about someone that "he's got rizz," what does this mean? The idea that teen slang is arbitrary and opaque to outsiders (i.e., older generations) is enough of a cultural touchstone that late night comedy shows have segments about it. Teens are far from the only ones to have in-group naming conventions; many communities form stable linguistic conventions including professional jargon, regionalisms, and of course slang. <!--Temporary naming conventions can arise in smaller groups to refer to a particular entity that doesn’t have a label or even to refer back to group in-jokes. -->
+When a teen says about someone that "he's got rizz," what does this mean? The idea that teen slang is arbitrary and opaque to outsiders (i.e., older generations) is enough of a cultural touchstone that late night comedy shows have segments about it. Teens are far from the only ones to have in-group naming conventions; many communities form stable linguistic conventions including professional jargon, regionalisms, and of course slang. 
 
-The formation of linguistic conventions between individuals is often studied experimentally in iterated reference games. In these games, a describer tells their partner how to sort or match a series of abstract images [e.g., @clark1986; @hawkins2020b]. Over repeated rounds of referring to the same targets, pairs develop conventionalized nicknames for the target images. These nicknames are often partner-specific, in that different pairs develop different nicknames for the same targets. When describing the targets to a new person, describers return to more elaborated descriptions, indicating an expectation that prior conventions are not appropriate descriptions to use for new matchers [@yoon2018; @wilkes-gibbs1992; @hawkins2021]. 
+Iterated reference games are commonly used as a model system for studying the formation of linguistic conventions.  In these games, a describer tells their partner how to sort or match a series of abstract images [e.g., @clark1986; @hawkins2020]. Over repeated rounds of referring to the same targets, pairs develop conventionalized nicknames for the target images. These nicknames are often partner-specific, in that different pairs develop different nicknames for the same targets. When describing the targets to a new person, describers return to more elaborated descriptions, indicating an expectation that prior conventions are not appropriate descriptions to use for new matchers [@yoon2018; @wilkes-gibbs1992; @hawkins2021]. This partner specificity is generally interpreted to be efficient, implying that conventions are not understandable to those outside of the convention formation process. 
 
-For one-shot reference games, the choice of referring expression can be described as a process of recursive inference, in which speakers reason about how listeners will interpret their utterance and vice versa. This process is described in Bayesian pragmatics models such as the Rational Speech Acts model (RSA) [@frank2012a; @goodman2016]. The Continual Hierarchical Adaptation through Inference model (CHAI) builds on RSA by adding rules for how agents update their belief distributions after each interaction, to account for the dynamics of repeated interaction in iterated reference games [@hawkins2021a]. <!--In models like CHAI, both speaker and listener agents are cooperatively reasoning about each other, but related models can be used when the interaction is one-sided, such as when a naïve listener is overhearing a conversation.--> A key factor permitting variation in referring expressions is lexical uncertainty; RSA models incorporating lexical uncertainty [@bergen; @potts2015] treat listeners as Bayesian agents who jointly infer the meaning of a speaker's utterance and their model of the speaker's lexicon. Models incorporating lexical uncertainty have been used to model children's word learning [@bohn2022] as well as person- and group-level differences [@schuster2020; @hawkins2021a]. Usually the scope of person-to-person variation in lexica is constrained, so it is more akin to learning a hierarchical set of tweaks to a lexicon so some words have slightly different extensions for different speakers and different circumstances, rather than learning completely arbitrary meanings for each person [@schuster2020; @hawkins2021a; but see @misyak2016]. <!--However, in some experimental settings, people can even learn contronymic mappings, where the same symbol has context-dependent opposite meanings [@misyak2016]. -->
+For one-shot reference games, the choice of referring expression can be described as a process of recursive inference, in which speakers reason about how listeners will interpret their utterance and vice versa. This process is described in Bayesian pragmatics models such as the Rational Speech Acts model (RSA) [@frank2012a; @goodman2016]. The Continual Hierarchical Adaptation through Inference model (CHAI) builds on RSA by adding rules for how agents update their belief distributions after each interaction, to account for the dynamics of repeated interaction in iterated reference games [@hawkins2021a]. In models like CHAI, both speaker and listener agents are cooperatively reasoning about each other, but related models can be used when the interaction is one-sided, such as when a naïve listener is overhearing a conversation. A key factor permitting variation in referring expressions is lexical uncertainty; RSA models incorporating lexical uncertainty [@bergen2016; @potts2015] treat listeners as Bayesian agents who jointly infer the meaning of a speaker's utterance and their model of the speaker's lexicon. Models incorporating lexical uncertainty have been used to model children's word learning [@bohn2022] as well as person- and group-level differences [@schuster2020; @hawkins2021a]. Usually models assume that the person-to-person variation in lexica is small, so the agent is learning a general meaning and a hierarchical set of tweaks to account for slightly different word extensions based on speaker and circumstance, rather than learning arbitrary menaings for each person  [@schuster2020; @hawkins2021a; but see @misyak2016].
 
 Conventions in iterated reference games are formed between people without a salient shared group identity prior to the interaction, but people do not use the conventions with new partners. How opaque are the temporary linguistic conventions created in reference games: are they opaque like "rizz" or interpretable like "roundabout"? From a theoretical perspective, measuring this opacity can help inform the development of models like CHAI that aim to account for lexical change in conversation. We attempt to answer this question here. 
 
-One way to measure the opacity of a referring expression is to look at the semantic distance between the signifier and the referent. Expressions that are more transparent are those where signifiers and referents are semantically close, such that anyone with the same general lexicon can identify the appropriate referent given the signifier. In contrast, expressions that are opaque have signifiers and referents that are semantically distant in the lexicon, such that the relations are arbitrary and inaccessible without additional clues such as the partner-specific conversation history. 
+
+We consider opacity of references to be a measure of the semantic distance between the referring expression and the target. Transparent expressions (those with low opacity) have signifiers and referents that are semantically close, such that anyone with the same general lexicon can identify the appropriate referent given the signifier. In contrast, expressions that are opaque have signifiers and referents that are semantically distant in the lexicon, such that the relations are arbitrary and inaccessible without additional clues such as the partner-specific conversation history. We note that properties of utterances such as groundedness or compositionality and properities of the target such as iconicity and naemability may load on opacity but are not the same as opacity. 
 
 One option for measuring the transparency of referring expressions is to use vision--language models to operationalize a shared semantic space for both language and images. Computational methods have enabled the embedding of various stimuli (including images and text) into high-dimensional feature spaces; these embeddings have properties which suggest that they are reasonable approximations of humans' semantic spaces, including similarity in representational geometries [e.g., @grand2022; @muttenthaler2021]. Indeed, embeddings from neural network models have been used as a form of semantics in a range of reference game scenarios [e.g., @gul2024; @ji2022a; @kang2020; @le2022; @ohmer2022]. In particular, such embeddings can be treated as the default context- and speaker-independent lexicon, since they are not updated to account for convention formation within an iterated reference game. 
 
-A second option for measuring the transparency of referring expressions is to measure how often naïve humans, who were not part of the group who formed the convention, can correctly associate the target referent with the referring expression. Prior work with naïve matchers has been limited and has focused on the role of conversational history. In this work, naïve matchers tend to do better the more their observation history resembles that of the original conversation---when hearing descriptions in order instead of in reverse order [@murfitt2001], when listening to the entire game instead of starting in the third round [@schober1989], and when seeing yoked trials from a single game rather than trials sampled across 10 games [@hawkins2023a]. In these studies, naïve matchers had worse accuracy than in-game matchers, but their performance was still far above chance, suggesting that the convention--target relationship is not purely arbitrary. In fact, even when pairs of participants try to obfuscate their meaning, overhearers can still do quite well at identifying the target referents [@clark1987]. Nonetheless, receiving more context from an interaction---and in particular having that context be in order---is beneficial to matchers. <!--Except for the shuffled condition of @hawkins2023a, these studies do not address how opaque descriptions are when they are presented without any prior context. <!--Such an approach would be important to have truly naïve matchers that lack even the context of trial order, providing a clearer understanding of when these expressions are opaque and when they are merely idiosyncratic.-->
+A second option for measuring the transparency of referring expressions is to measure how often naïve humans, who were not part of the group who formed the convention, can correctly associate the target referent with the referring expression. Prior work with naïve matchers has been limited and has focused on the role of conversational history. In this work, naïve matchers tend to do better the more their observation history resembles that of the original conversation---when hearing descriptions in order instead of in reverse order [@murfitt2001], when listening to the entire game instead of starting in the third round [@schober1989], and when seeing yoked trials from a single game rather than trials sampled across 10 games [@hawkins2023a]. In these studies, naïve matchers had worse accuracy than in-game matchers, but their performance was still far above chance, suggesting that the convention--target relationship is not purely arbitrary. In fact, even when pairs of participants try to obfuscate their meaning, overhearers can still do quite well at identifying the target referents [@clark1987]. Nonetheless, receiving more context from an interaction---and in particular having that context be in order---is beneficial to matchers. Except for the shuffled condition of @hawkins2023a, these studies do not address how opaque descriptions are when they are presented without any prior context. Such an approach would be important to have truly naïve matchers that lack even the context of trial order, providing a clearer understanding of when these expressions are opaque and when they are merely idiosyncratic.
 
 In the current work, we measure the opacity of the referring expressions created in iterated reference games. We use conversations from @boyce2024, who created a large corpus of iterated reference games that were played online using a chatbox for communication. This corpus is made up of 6-round iterated reference games using the same 12 target images. Games varied in how large the describer--matcher groups were (2--6 participants) and how "thick" the communication channels were (for example, if matchers could send back messages or just emoji). The varied conditions within a consistent framework allowed us to test how the opacity of referring expressions varies depending on the conditions the referring expressions came from. 
 
@@ -118,7 +121,7 @@ We used the Contrastive Language-Image Pretraining model (CLIP; `clip-vit-large-
 \end{table}
 ```
 
-To improve the performance of base CLIP, we trained a set of readout models to assign probabilities to images using CLIP's logits as features. Models were trained to maximize task performance (i.e., to assign high probability to the target tangram given the concatenated describer utterance). We compared four types of models: random forest, logistic regression, multi-layer perceptron (MLP), and gradient-boosted tree. Classifiers were implemented in the `scikit-learn` and `XGBoost` libraries [@pedregosa2011scikit; @chen2016xgboost]. Each readout model was evaluated using 10-fold cross-validation, where the model was trained on 90% of the data and evaluated on the remaining 10%. Table \ref{tab:classifier_comparison} shows the cross-validated accuracy of different readout models, as well as the performance of CLIP with no readout. The MLP with two hidden layers of size 100 performed the best on held-out data; in subsequent analyses, we use the MLP trained on all the data.
+To improve the performance of base CLIP, we trained a set of readout models to assign probabilities to images using CLIP's logits as features. Models were trained to maximize task performance (i.e., to assign high probability to the target tangram given the concatenated describer utterance). We compared four types of models: random forest, logistic regression, multi-layer perceptron (MLP), and gradient-boosted tree. Classifiers were implemented in the `scikit-learn` and `XGBoost` libraries [@pedregosa2011; @chen2016]. Each readout model was evaluated using 10-fold cross-validation, where the model was trained on 90% of the data and evaluated on the remaining 10%. Table \ref{tab:classifier_comparison} shows the cross-validated accuracy of different readout models, as well as the performance of CLIP with no readout. The MLP with two hidden layers of size 100 performed the best on held-out data; in subsequent analyses, we use the MLP trained on all the data.
 
 ## Experiment 1
 
@@ -149,7 +152,7 @@ We recruited `r expt_3_data |> select(workerid) |> n_distinct()` participants wh
 
 ### Results and discussion
 
-We obtained human accuracies on each trial by dividing the number of participants who selected the target by the total number of participants who saw the trial (Figure \ref{fig:fig-calibration}). There was a modest but significant positive correlation between model-predicted probabilities and human accuracies ($r$ = `r round(expt_3_cor$estimate, digits = 2)` [`r round(expt_3_cor$conf.int[1], digits = 2)`, `r round(expt_3_cor$conf.int[2], digits = 2)`]). This result suggests that model predictions were calibrated to human response patterns, albeit not perfectly. <!--It is possible to use these calibration results to tune model predictions to better approximate human responses; we leave this approach for future work. --> Nonetheless, the observed positive correlation suggests that our computational model carries some signal about human accuracies, validating its use in subsequent experiments as a computational comparison.
+We obtained human accuracies on each trial by dividing the number of participants who selected the target by the total number of participants who saw the trial (Figure \ref{fig:fig-calibration}). There was a modest but significant positive correlation between model-predicted probabilities and human accuracies ($r$ = `r round(expt_3_cor$estimate, digits = 2)` [`r round(expt_3_cor$conf.int[1], digits = 2)`, `r round(expt_3_cor$conf.int[2], digits = 2)`]). This result suggests that model predictions were calibrated to human response patterns, albeit not perfectly. It is possible to use these calibration results to tune model predictions to better approximate human responses; we leave this approach for future work. Nonetheless, the observed positive correlation suggests that our computational model carries some signal about human accuracies, validating its use in subsequent experiments as a computational comparison.
 
 ```{r}
 expt_2_relevant_games <- expt_1_data |>
@@ -306,7 +309,7 @@ acc_mod_mlp_sbert <- read_rds(here(mod_results, "acc_mlp_1_2_sbert_beta.rds")) |
 ### Results
 
 #### Experiment 2a
-For Experiment 2a, we ran a Bayesian mixed-effects logistic model of naïve matcher accuracy in `brms` [@burkner2018].^[`r form(acc_1_form)`] Overall, naïve matchers were right 62% of the time, far above the 1/12 = 8.3% expected by random chance (OR = `r stats_text(acc_mod_1, 1)`).
+For Experiment 2a, we ran a Bayesian mixed-effects logistic model of naïve matcher accuracy in `brms` [@burkner2018].^[`r form(acc_1_form)`] For this and other models, we report the model estimate and 95% credible interval.  Overall, naïve matchers were right 62% of the time, far above the 1/12 = 8.3% expected by random chance (OR = `r stats_text(acc_mod_1, 1)`).
 There were no large effects of condition (Figure \ref{expt2-condition} middle panel). Participants tended to be less accurate at descriptions from the last round (OR of last round = `r stats_text(acc_mod_1, 4)`). There was no  clear effect of original group size (OR of 6-player game = `r stats_text(acc_mod_1, 2)`), but there was an interaction between round and group size (OR = `r stats_text(acc_mod_1, 3)`). Later transcripts from larger games were easier to understand, but earlier transcripts from smaller games were easier to understand.
 Much of the variation in accuracy was driven by the target image, which accounted for more variation than participant differences (standard deviation of image distribution = `r stats_text(acc_mod_1_me, 3)`; SD of participant distribution = `r stats_text(acc_mod_1_me, 7)`). Some images were much easier to identify as the target than others (Figure \ref{expt2-tangram}). 
 
@@ -318,7 +321,7 @@ For Experiment 2b, we ran a similar Bayesian mixed-effects logistic model.^[`r f
 
 We considered the accuracy of the in-game matchers from @boyce2024 and the length of the description as post-hoc predictors. In both experiments, in-game accuracy was predictive of naïve matcher accuracy (Expt 2a OR = `r stats_text(acc_mod_1_orig_acc, 4)`, Expt 2b OR = `r stats_text(acc_mod_2_orig_acc, 6)`). The log number of words in the description was not predictive in Experiment 2a (OR = `r stats_text(acc_mod_1_orig_length, 4)`), but longer descriptions were slightly beneficial in Experiment 2b (OR = `r stats_text(acc_mod_2_orig_length, 6)`). 
 
-The pattern of which conditions became more opaque in later rounds resembled the pattern of which conditions produced descriptions that diverged the most in semantic space in @boyce2024. As a post-hoc test of whether opacity might be related to semantic divergence, we used the mean semantic similarity between an utterance and other utterances in the same condition as an additional predictor of accuracy.^[Semantic similarity was operationalized as cosine similarity between S-BERT embeddings [@reimers2019], the measure of semantic distance used in @boyce2024.] Similarity to other utterances was strongly predictive of increased accuracy in both experiments (Expt 2a: OR = `r stats_text(acc_mod_1_sbert, 3)`, Expt 2b: OR = `r stats_text(acc_mod_2_sbert, 4)`) and was more predictive for the last round descriptions (Expt 2a: OR = `r stats_text(acc_mod_1_sbert, 4)`, Expt 2b: OR = `r stats_text(acc_mod_2_sbert, 5)`). While exploratory, this analysis suggests that referring expressions that are further from shared semantic priors (i.e., more idiosyncratic) are harder for naïve matchers to understand. 
+The pattern of which conditions became more opaque in later rounds resembled the pattern of which conditions produced descriptions that diverged the most in semantic space in @boyce2024. As a post-hoc test of whether opacity might be related to semantic divergence from other descriptions, we used the mean semantic similarity between an utterance and other utterances in the same condition as an additional predictor of accuracy.^[Semantic similarity was operationalized as cosine similarity between S-BERT embeddings [@reimers2019], the measure of semantic distance used in @boyce2024.] Similarity to other utterances was strongly predictive of increased accuracy in both experiments (Expt 2a: OR = `r stats_text(acc_mod_1_sbert, 3)`, Expt 2b: OR = `r stats_text(acc_mod_2_sbert, 4)`) and was more predictive for the last round descriptions (Expt 2a: OR = `r stats_text(acc_mod_1_sbert, 4)`, Expt 2b: OR = `r stats_text(acc_mod_2_sbert, 5)`). While exploratory, this analysis suggests that referring expressions that are further from shared semantic priors (i.e., more idiosyncratic) are harder for naïve matchers to understand. 
 
 ### Model results
 
@@ -335,7 +338,9 @@ The largest source of variability in accuracy was from target images, and whethe
 
 ## Experiment 3
 
-The experience of naïve matchers in Experiment 2 differed from in-game matchers in several ways; any of these could explain differences in accuracy. In-game matchers received descriptions from a consistent group, in the order they were created, and were the intended audience of the descriptions. In Experiment 3, we focused on the role of context and group-specific interaction history to tease apart some of these differences. Our primary question of interest was how much seeing the entire the conversation history in order would increase the interpretability of later round descriptions. 
+The experience of naïve matchers in Experiment 2 differed from in-game matchers in several ways; any of these could explain differences in accuracy. In-game matchers received descriptions from a consistent group, in the order they were created, and were the intended audience of the descriptions. In Experiment 3, we focused on the role of context and group-specific interaction history to tease apart some of these differences. One question of interest was how much seeing the entire the conversation history in order would increase the interpretability of later round descriptions. 
+
+Additionally, we were interested in how quickly naive matchers process the linguistic descriptions and how this might relate to the oredictability and informativity of the descriptions. Word predictability (often measured as surprisal) is a predictor of language processing times. The iterated reference game transcripts present an interesting test case because expressions are likely to be globall uncommon (and thus unpredictable), but may be licenced and unsurprising given the immediate visual context and conversation history. Thus, another question of interest is how rapidly comprehenders are able to adapt to the changing context. 
 
 ### Methods
 
@@ -343,7 +348,7 @@ We compared naïve matchers in yoked and shuffled conditions. In the yoked condi
 
 Because some descriptions are already fairly comprehensible in isolation, we focused on games that showed strong group-specificity. We hand-picked 10 games from @boyce2024 on the basis of high in-game matcher accuracy, strong patterns of descriptions shortening over repetition, and the use of idiosyncratic or non-modal referring expressions. Thus, these games showed the hallmarks of strong conventionalization to terms that were more likely to be opaque to outsiders. 
 
-We recruited 196 participants (99 in the yoked condition and 97 in shuffled) who each saw all 72 trials of one of the 10 games. This experiment was pre-registered at [this anonymized link](https://osf.io/zqwp5/?view_only=87420dc86f0a4a56a395cd464aa3a5c1). Participants read the transcripts in a modified self-paced reading procedure where they uncovered the text word-by-word (revealed words stayed visible); only after uncovering the entire transcript could participants select an image. We do not analyze the reading time data here.
+We recruited 196 participants (99 in the yoked condition and 97 in shuffled) who each saw all 72 trials of one of the 10 games. This experiment was pre-registered at [this anonymized link](https://osf.io/zqwp5/?view_only=87420dc86f0a4a56a395cd464aa3a5c1). Participants read the transcripts in a modified self-paced reading procedure where they uncovered the text word-by-word (revealed words stayed visible); only after uncovering the entire transcript could participants select an image. 
 
 ```{r fig-yoked, fig.env="figure", fig.pos = "t", fig.align = "center", out.width=".95\\textwidth", fig.width=5, fig.height=3, fig.cap = "Accuracies for Experiment 3. Error bars are bootstrapped 95% CIs. \\label{yoked}" }
 expt_4_acc_data <- expt_4_data |>
@@ -409,15 +414,110 @@ acc_compare_me <- read_rds(here(mod_me, "yoked_shuffled_original.rds")) |> mutat
 acc_4_form_compare <- read_rds(here(mod_form, "yoked_shuffled_original.rds"))
 ```
 
+<!--
+
+
+
+\begin{minipage}{.5\textwidth}
+		\captionof{figure}{RT model}
+\includegraphics[width=\textwidth]{word_preds.pdf} 
+	
+\end{minipage}
+~~
+\begin{minipage}{.45\textwidth}
+	\begin{small}
+
+		
+		\includegraphics[width=\textwidth]{other_preds.pdf} 
+		
+		\vspace{2pt}
+		
+		Model: 
+		
+	\end{small}
+
+-->
 ### Results and discussion
 
-Our primary question of interest was how much seeing the conversation history unfold in order would help participants interpret descriptions, especially those from later rounds.
 
-We compared accuracy across the yoked and shuffled conditions with a Bayesian mixed-effects logistic regression.^[`r form(acc_4_form)`]. The descriptions were more transparent when they were presented in a yoked order (OR = `r stats_text(acc_mod_4, 2)`, Figure \ref{yoked}). In the shuffled condition, there was no main effect of round number (OR for one round later = `r stats_text(acc_mod_4, 4)`), but there was a marginal interaction where the benefit of the yoked condition decreased for later rounds (OR for one round later = `r stats_text(acc_mod_4, 5)`). This was offset by matchers in both conditions improving at the task over time (OR for one trial later in matcher viewing order = `r stats_text(acc_mod_4, 3)`). <!--In the yoked condition round and trial number were aligned, so an improvement over time could be either from matcher practice or from descriptions being easier to understand. In the shuffled condition, matcher practice effects did not correlate with position in the original game. -->
+#### Accuracy
+
+One primary question of interest was how much seeing the conversation history unfold in order would help participants interpret descriptions, especially those from later rounds.
+
+We compared accuracy across the yoked and shuffled conditions with a Bayesian mixed-effects logistic regression.^[`r form(acc_4_form)`]. The descriptions were more transparent when they were presented in a yoked order (OR = `r stats_text(acc_mod_4, 2)`, Figure \ref{yoked}). In the shuffled condition, there was no main effect of round number (OR for one round later = `r stats_text(acc_mod_4, 4)`), but there was a marginal interaction where the benefit of the yoked condition decreased for later rounds (OR for one round later = `r stats_text(acc_mod_4, 5)`). This was offset by matchers in both conditions improving at the task over time (OR for one trial later in matcher viewing order = `r stats_text(acc_mod_4, 3)`). In the yoked condition round and trial number were aligned, so an improvement over time could be either from matcher practice or from descriptions being easier to understand. In the shuffled condition, matcher practice effects did not correlate with position in the original game.
 
 Comparing to the performance of in-game matchers, we separated out the benefits of seeing the descriptions in order versus being a participant in the group.^[`r form(acc_4_form_compare)`] There was a benefit to seeing the items in order (OR = `r stats_text(acc_compare, 3)`) and a larger benefit to being a participant during the game (OR = `r stats_text(acc_compare, 7)`). The benefit of seeing the items in order waned in later blocks (OR = `r stats_text(acc_compare, 5)`), but the benefit of being in the game did not (OR = `r stats_text(acc_compare, 6)`). In all cases, there was a baseline improvement over trials (OR = `r stats_text(acc_compare, 2)`). As a caveat, we note that in-game matchers and naïve matchers may have varied from each other in terms of effort and time spent on the task, and thus the comparison should be interpreted cautiously.
 
 The accuracy of the CLIP-MLP model was worse than the shuffled human results, and did not change across rounds (OR for one round later = `r stats_text(acc_mlp_4, 2)`). The larger difference between naïve human and CLIP-MLP accuracies in Experiment 3 than Experiment 2 suggests that the shuffled ordering still provides useful context that helps matchers understand the conventions. This history was not available to the CLIP-MLP model which saw every description as a one-shot task. 
+
+
+#### Incremental reading times
+
+
+```{r incremental-predictors, fig.env = "figure", fig.pos = "t!", out.width=".95\\textwidth", fig.align = "center", fig.cap = "Schematic of informativity predictors used in the incremental reading time analysis. \\label{incremental-predictors}", cache=FALSE}
+knitr::include_graphics(here("bad-ideas/preds.png"))
+```
+
+```{r incremental-results, fig.env="figure", fig.pos = "t", fig.align = "center", out.width=".95\\textwidth", fig.width=7, fig.height=4, fig.cap = "Estimates and 95% credible intervals for coefficients in the incremental processing model. Word-level predictors are shown in panel A, colored by spillover position. Condition effects are shown in panel B. \\label{incremental-results}" }
+blah <- read_rds(here(mod_loc, "summary/everything_lag3_normalized_summary.rds"))
+
+
+word_level <- blah |>
+  filter(!is.na(lag)) |>
+  ggplot(aes(x = type, y = Estimate, ymin = `Q2.5`, ymax = `Q97.5`, col = as.factor(lag))) +
+  geom_hline(yintercept = 0, lty = "dotted") +
+  geom_pointrange(position = position_dodge2(width = .6, reverse = T)) +
+  coord_flip() +
+  scale_color_manual(values = c("#5DC863", "#21908C", "#3B538B", "#440154")) +
+  labs(y = "Standardized coefficient estimate", color = "Predictor lag") +
+  theme(
+    axis.title.y = element_blank(),
+    legend.position = "inside",
+    legend.position.inside = c(.82, .35),
+    legend.background = element_blank(),
+    legend.box.background = element_rect(colour = "black"),
+    axis.text = element_text(size = 10),
+    axis.title = element_text(size = 10),
+    legend.title = element_text(size = 10),
+    legend.text = element_text(size = 10)
+  )
+
+overall <- blah |>
+  filter(is.na(lag)) |>
+  filter(term != "Intercept") |>
+  mutate(type = factor(type, levels = c("conditionyoked", "orig_repNum", "orig_repNum:conditionyoked", "matcher_trialNum"), labels = c("Condition (yoked)", "Original Block", "Block x condition", "Viewing order")) |> fct_rev()) |>
+  ggplot(aes(x = type, y = Estimate, ymin = `Q2.5`, ymax = `Q97.5`)) +
+  geom_hline(yintercept = 0, lty = "dotted") +
+  geom_pointrange(position = position_dodge2(width = .6, reverse = T)) +
+  coord_flip() +
+  labs(y = "Estimated coefficient", color = "Predictor lag", subtitle="") +
+  theme(
+    axis.title.y = element_blank(),
+    legend.position = "inside",
+    legend.position.inside = c(.8, .5),
+    legend.background = element_blank(),
+    legend.box.background = element_rect(colour = "black"),
+    axis.text = element_text(size = 10),
+    axis.title = element_text(size = 10),
+    legend.title = element_text(size = 10),
+    legend.text = element_text(size = 10)
+  )
+
+plot_grid(word_level, overall, nrow=2, rel_heights=c(4,2), labels="AUTO", label_x=0.05)
+```
+
+Our second question was whether comprehenders would rapidly adapt to the task, which we addressed by considering different potential predictors of word-by-word reading times that varied on whether the took in local context. As a baseline, we included word length and log frequency. We also considered three measures of a word's informativity:  \textbf{1)} surprisal from a base large language model (LLM, LLama 3.1 8B) [@grattafiori2024], \textbf{2)} surprisal from a vision language model (VLM, Llama 3.2 11B)[@grattafiori2024], conditioned on grid of 12 possible targets, and \textbf{3)} the word-wise change (operationalized as KL divergence) in predicted target distribution from the CLIP-MLP model discussed above (Figure 3). This last measure represents the task-relevant information content of a word based on how much it shifts the model's distribution over possible targets. We residualized the measures of informativity and normalized all word-level predictors, and then modeled RTs as a function of these predictors for the current and 3 prior words, in addition to condition-level predictors (Figure \ref{incremental-predictors}). ^[The model formula was \textit{RT $\sim$ [word-length $\times$ frequency + LLM + VLM + KL] +  original-block $\times$ condition + order-viewed + (1 | game) + (1 | target) + (1 | participant)  } Bracketed predictors were included for current word and 3 prior words to account for spillover. ]
+
+Model results are shown in Figure \ref{incremental-results}. As expected, shorter and more frequent words were faster to read. Unexpectedly, current word LLM surprisal was not predictive of reading time, and both VLM surprisal and KL divergence were predictive of shorter reading times, in contrast to the typical positive relationship between surprisal and RTs. LLM surprisal, VLM surprisal, and KL all measure different sources of information with increasing task-specificity, and may have different impulse response functions, leading to different patterns of lag. 
+
+Overall, participants tended to read faster in the yoked condition than the shuffled condition, indicative of context having a facilitative role on reading time. Participants also tended to get faster over the course of the task, which could be either adaptation to the task, or an increasing comprehension of the descriptions (which would be supported by their increasing accuracy over time). Participants tended to read more slowly per word for descriptions coming from later original blocks; however; this measure is confounded both by viewing order being correlated with block for the yoked condition, and by reduced representation of short descriptions in the reading time data, due to the need for spillover predictors. 
+
+The reading time paradigm we used is noisy and prone to spillover effects. For user interface reasons, we did not require a button press after the last word to enable target selection, so we do not have RTs for the final words. Additionally, our analytic approach meant that we only considered words where we had predictors for the three previous words (to account for spillover); however, this does mean that we do not have usable data for utterances that were 4 words or fewer.  We do think we were getting some signal as the RTs were correlated with word length and word frequency, but unfortunately, we are unable to interpret the measures of information because of the noisy paradigm. 
+
+
+
+
+
 
 
 ## General Discussion 
@@ -429,8 +529,11 @@ Across multiple experiments, we found that naïve human matchers were far above 
  <!-- We also tested a computational model built on CLIP with a multi-layer perceptron readout as a way of approximating the semantic distance between descriptions and images. The CLIP-MLP model was far above chance in its assignment of probabilities to target images and correlated with human accuracies, although its probabilities were lower than human matcher accuracies.  -->
 
 
-<!-- This work suggests that conventions formed within a small group may still be fairly comprehensible to those outside the group, as the semantics of these conventionalized expressions may still be relatively close to the semantics of the image. Hence, such conventions may not be completely arbitrary, and are instead strongly related to the image and the shared general lexicon, although it is possible that greater arbitrariness and opacity may be obtained with more extended interaction. -->
+
+ This work suggests that conventions formed within a small group may still be fairly comprehensible to those outside the group, as the semantics of these conventionalized expressions may still be relatively close to the semantics of the image. Hence, such conventions may not be completely arbitrary, and are instead strongly related to the image and the shared general lexicon, although it is possible that greater arbitrariness and opacity may be obtained with more extended interaction. 
 <!--, who may produce different descriptions themselves. This finding raises questions around how well-calibrated describers are to their matcher's level of knowledge, and whether the process of convention formation is actually efficient. Even naïve matchers can often understand the shorthand descriptions, especially when there has not been a lot of semantic drift, but in reference games, describers choose elaborated descriptions with new matchers. In a game, norms of cooperation and conversation may lead describers to start new matchers with elaborated descriptions designed to give them a high level of confidence in target selection. Describers are also constrained by their need to come up with a description in real time. However, the high level of understanding and the lack of substantial benefit from early round descriptions does raise empirical questions about how calibrated describers are to the level of information necessary. -->
+
+While this first attempt to combine incremental sentence processing methods with descriptions from iterated reference games was not very informative, it points out that this genre of methods could be used to address questions of how both visual and conversational context influence influence word predictability and in turn the speed at which words are integrated in online sentence processing. Further work could refine the measures using more sensitive techniques such as eye-tracking, analyses that better account for time course, and measures of information that take prior informativity into account. Beyond reading time measures, one could also consider indexing informativity more directly with a gated paradigm that allows for periodic guesses of the target to provide human measures of incremental task-informativity. 
 
 Limiting the generality of our findings, our experimental and computational results were only on a specific set of iterated reference game transcripts and images. Some images may lend themselves to more transparent descriptions because they are more iconic, with a narrower prior over different ways they could be conceptualized, or they may be further from competitors within this pool of images. Future work sampling across larger sets of images [such as @ji2022a] could probe image-level factors. <!--Future work could also explore within-description sources of variation and how the structure and word choice of utterance correlates with naïve matcher accuracy. Computational models could be especially beneficial because they could be run on subsets or ablations of descriptive text. -->
 

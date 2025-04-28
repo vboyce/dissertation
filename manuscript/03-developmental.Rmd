@@ -1,5 +1,6 @@
-# Developmental origins
+# Preschoolers can form conventional pacts with each other  to communicate about novel referents
 
+\chaptermark{Preschool convention formation}
 
 ```{r preschool-setup, include=FALSE}
 knitr::opts_chunk$set(

@@ -18,13 +18,16 @@ header-includes:
     - \usepackage{tikz}
     - \usetikzlibrary{angles,positioning,arrows.meta, quotes, shapes, shapes.geometric}
     - \usepackage{graphicx}
-   # - \usepackage{emoji}
+    - \usepackage{emoji}
     - \usepackage{caption, subcaption}
+    - \usepackage{float}
+    - \usepackage{placeins}
 
 # Remove the hashtag to specify which version of output you would like.
 # Can only choose one at a time.
 output:
-  thesisdown::thesis_pdf: default 
+  thesisdown::thesis_pdf: 
+    latex_engine: lualatex
 
 abstract: |
   `r if(knitr:::is_latex_output()) paste(readLines("00-abstract.Rmd"), collapse = '\n  ')`
@@ -33,7 +36,6 @@ acknowledgements: |
 #  I want to thank a few people.
 # Specify the location of the bibliography below
 bibliography: [bib/dissertation.bib]
-#, bib/mpt.bib, bib/preschool-tangrams.bib, bib/tg-matcher.bib]
 # Download your specific csl file and refer to it in the line below.
 csl: csl/apa7.csl
 lot: false
@@ -44,7 +46,7 @@ lof: false
 knitr::opts_chunk$set(
   fig.width = 3, fig.height = 3, fig.crop = F,
   fig.pos = "tb", fig.path = "figs/",
-  echo = F, warning = F, cache = F,
+  echo = F, warning = F, cache = T,
   message = F, sanitize = T
 )
 
