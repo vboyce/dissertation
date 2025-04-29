@@ -38,13 +38,22 @@ acknowledgements: |
 bibliography: [bib/dissertation.bib]
 # Download your specific csl file and refer to it in the line below.
 csl: csl/apa7.csl
-lot: false
-lof: false
+lot: true
+lof: true
 ---
 
+
+\renewcommand{\textfraction}{0.00}
+\renewcommand{\topfraction}{1}
+\renewcommand{\bottomfraction}{1}
+\renewcommand{\floatpagefraction}{1}
+\setcounter{topnumber}{5}
+\setcounter{bottomnumber}{5}
+\setcounter{totalnumber}{6} 
+
 ```{r global_options, include=FALSE}
-knitr::opts_chunk$set(
-  fig.width = 3, fig.height = 3, fig.crop = F,
+knitr::opts_chunk$set(out.width="\\textwidth",
+  fig.align="center", fig.width=8, fig.height=4, fig.crop = F, fig.align = "center", fig.env = "figure",
   fig.pos = "tb", fig.path = "figs/",
   echo = F, warning = F, cache = T,
   message = F, sanitize = T

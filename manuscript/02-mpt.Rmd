@@ -3,12 +3,6 @@
 \chaptermark{Interaction structure}
 
 ```{r set-up, include=FALSE}
-knitr::opts_chunk$set(
-  fig.width = 3, fig.height = 3, fig.crop = F,
-  fig.pos = "tb", fig.path = "figs/",
-  echo = F, warning = F, cache = F,
-  message = F, sanitize = T
-)
 require(Hmisc)#not directly called, but needed for dots on plots with mean_ci_boot ! 
 #this has to go first b/c it defines summarize and that screws things up
 
@@ -126,7 +120,7 @@ Thus, increasing group size alone does not impede communication; rather, larger 
 More broadly, our work suggests that studying communication in larger groups is necessary to unveil critical aspects of interaction structure that have not been evident in typical dyadic settings.
 
 
-```{r diagram,  fig.env = "figure", fig.pos = "t!", out.width=".95\\textwidth", fig.width=10, fig.height=8, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap="(A) Participants played a repeated reference game in groups of size 2 to 6. On each trial, a describer described the target image to the group of matchers. Each image appeared once per block for six blocks. (B) Experiments varied along 3 dimensions: Group size, group coherence, and matcher contributions. (C) Experiment 1 (pink) varied group size from 2 to 6 players while holding group coherence and matcher contributions constant. Experiment 2 (blue) held group size constant at 6 and manipulated the other dimensions. Experiment 3 (green) tested 4 corners of the space, crossing group size (2 vs. 6 players) with the thickness of interaction structure (high vs. low coherence and matcher contributions)."}
+```{r diagram, fig.cap="(A) Participants played a repeated reference game in groups of size 2 to 6. On each trial, a describer described the target image to the group of matchers. Each image appeared once per block for six blocks. (B) Experiments varied along 3 dimensions: Group size, group coherence, and matcher contributions. (C) Experiment 1 (pink) varied group size from 2 to 6 players while holding group coherence and matcher contributions constant. Experiment 2 (blue) held group size constant at 6 and manipulated the other dimensions. Experiment 3 (green) tested 4 corners of the space, crossing group size (2 vs. 6 players) with the thickness of interaction structure (high vs. low coherence and matcher contributions)."}
 knitr::include_graphics(here("mpt/expt-diagram4.pdf"))
 ```
 
@@ -163,7 +157,7 @@ In the *thick* condition, we maintained a consistent describer, gave all matcher
 In the *thin* condition, we forced the describer to rotate on each block, restricted feedback to their own binary correctness, and restricted matcher contributions to the four emojis.
 Note that the 2-player thick game most closely resembles the design of classic repeated reference games [@clark1986].
 
-```{r behavioral, fig.env = "figure*", fig.pos = "t!", out.width=".95\\textwidth", fig.width=10, fig.height=8.5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Behavioral results across all three experiments. (A-C). Matcher accuracy at selecting the target image. (D-F). Number of words produced by the describer each trial. For all, small dots are per game, per block means, and smooth lines are predictions from model fixed effects with 95\\% credible intervals. Y-axes are truncated, and a few outliers points are not visible."}
+```{r behavioral, fig.width=10, fig.height=8.5, fig.cap = "Behavioral results across all three experiments. (A-C). Matcher accuracy at selecting the target image. (D-F). Number of words produced by the describer each trial. For all, small dots are per game, per block means, and smooth lines are predictions from model fixed effects with 95\\% credible intervals. Y-axes are truncated, and a few outliers points are not visible."}
 # accuracy
 
 acc_pred_1 <- read_rds(here("mpt/code/paper_mods/prediction/acc_pred_1.rds"))
@@ -452,11 +446,12 @@ per_anylist_1 <- read_rds(here(msum_loc,"per_anylist_1.rds"))
 
 \begin{table}
 	\centering
+	\begin{footnotesize}
 
 	\caption{Examples from 6-player groups in Experiment 3 of successful descriptions for the same image across repetitions. Describers are indicated with an asterisk. More example descriptions are in SI Tables 1 and 2. \\\label{listener-examples}}
-	\begin{subtable}{0.5\linewidth}
+	\begin{subtable}{0.45\textwidth}
 		\centering
-			\begin{tabular}{lp{2.5in}}
+			\begin{tabular}{lp{2in}}
 			\hline
 			
 			\multicolumn{2}{c}{\textbf{6-person thick game}}\\
@@ -493,9 +488,9 @@ per_anylist_1 <- read_rds(here(msum_loc,"per_anylist_1.rds"))
 		\end{tabular}
 	\end{subtable}%
 	\hspace*{2em}
-	\begin{subtable}{0.5\linewidth}
+	\begin{subtable}{0.45\linewidth}
 		\centering
-		\begin{tabular}{lp{2.5in}}
+		\begin{tabular}{lp{2in}}
 		\multicolumn{2}{c}{\includegraphics[width=1in]{../mpt/tangram_H.png}}\\
 		\hline
 
@@ -530,6 +525,7 @@ per_anylist_1 <- read_rds(here(msum_loc,"per_anylist_1.rds"))
 						\hline
 		\end{tabular}
 	\end{subtable}
+	\end{footnotesize}
 \end{table}
 
 
@@ -583,7 +579,7 @@ Overall, describers in larger groups receive more total input from matchers, sug
 
 ### Descriptions converge faster in groups with thicker channels
 
-```{r sbert-diagram, fig.env = "figure*", fig.pos = "t!", out.width=".95\\textwidth", fig.width=10, fig.height=8, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Example utterances describing the shown tangram figure produced by two 3-player games in Experiment 1. To measure convergence within a game (blue), we measured the cosine similarity between SBERT embeddings of descriptions and the embedding of the round 6 utterance (taken to be the convention). Higher cosine similarity indicates more similar meaning. To measure divergence between games (green), we measured the similarity between embeddings of utterances from the same round across games."}
+```{r sbert-diagram,  fig.cap = "Example utterances describing the shown tangram figure produced by two 3-player games in Experiment 1. To measure convergence within a game (blue), we measured the cosine similarity between SBERT embeddings of descriptions and the embedding of the round 6 utterance (taken to be the convention). Higher cosine similarity indicates more similar meaning. To measure divergence between games (green), we measured the similarity between embeddings of utterances from the same round across games."}
 knitr::include_graphics(here("mpt/sbert.pdf"))
 ```
 
@@ -608,7 +604,7 @@ To measure stability, or convergence within groups, we compared utterances from 
 To measure arbitrariness, or divergence across groups depending on group-specific history, we compared utterances produced by different describers for the same image in the corresponding blocks. 
 Figure \@ref(fig:sbert-diagram) illustrates these two measures with example utterances and their within-game and between-game cosine similarities. 
 
-```{r sbert, fig.env = "figure*", fig.pos = "t!", out.width=".95\\textwidth", fig.width=10, fig.height=8.5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Language similarity results measured with pairwise cosine similarity between embeddings of two utterances. (A-C). Convergence of descriptions within games as measured by similarity between an utterance from block 1-5 to the block 6 utterance in the same game for the same image. (D-F). Divergence of descriptions across games as measured by the similarity between two utterances produced for the same image by different groups in the same block. For all, small dots are per game, per block means, and smooth lines are predictions from model fixed effects with 95\\% credible intervals. Y-axes are truncated, and a few outliers points are not visible."}
+```{r sbert, fig.width=10, fig.height=8.5, fig.cap = "Language similarity results measured with pairwise cosine similarity between embeddings of two utterances. (A-C). Convergence of descriptions within games as measured by similarity between an utterance from block 1-5 to the block 6 utterance in the same game for the same image. (D-F). Divergence of descriptions across games as measured by the similarity between two utterances produced for the same image by different groups in the same block. For all, small dots are per game, per block means, and smooth lines are predictions from model fixed effects with 95\\% credible intervals. Y-axes are truncated, and a few outliers points are not visible."}
 #convergence
 one_two_converge <- read_rds(here("mpt/code/models/one_two_converge.rds"))
 three_converge <- read_rds(here("mpt/code/models/three_converge.rds"))

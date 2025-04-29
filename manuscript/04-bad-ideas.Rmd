@@ -4,12 +4,7 @@
 \chaptermark{Opacity of conventions}
 
 ```{r bad-ideas-options, include=FALSE}
-knitr::opts_chunk$set(
-  fig.width = 3, fig.height = 3, fig.crop = F,
-  fig.pos = "tb", fig.path = "figs/",
-  echo = F, warning = F, cache = F,
-  message = F, sanitize = T
-)
+
 library(png)
 library(grid)
 library(ggplot2)
@@ -65,7 +60,7 @@ In the current work, we measure the opacity of the referring expressions created
 
 We use both human experiments and models to assess when and why expressions are opaque or understandable to outside observers. We first present a computational approach using a vision--language model to measure the semantic similarities between referring expressions and their targets, and we validate our model against naïve human matchers (Experiment 1). We then use both naïve human matchers and the model to compare the opacity of referring expressions across different game conditions and time points (Experiment 2). Finally, we address the role of conversation history by comparing naïve matcher performance on game transcripts presented in order versus out of order (Experiment 3). 
 
-```{r bad-ideas-interface, fig.env = "figure", fig.pos = "t!", out.width=".95\\textwidth", fig.align = "center", fig.cap = "Experimental setup. Naïve matchers read transcripts from trials in reference games from Boyce et al. (2024) and selected which image they thought was being described. Matchers recieved bonus payments for correct selections. \\label{game}", cache=FALSE}
+```{r bad-ideas-interface,  out.width=".8\\textwidth",fig.cap = "Experimental setup. Naïve matchers read transcripts from trials in reference games from Boyce et al. (2024) and selected which image they thought was being described. Matchers recieved bonus payments for correct selections. \\label{game}", cache=FALSE}
 knitr::include_graphics(here("bad-ideas/matcher-diagram.pdf"))
 ```
 
@@ -129,7 +124,7 @@ To improve the performance of base CLIP, we trained a set of readout models to a
 expt_3_cor <- cor.test(expt_3_summary$value, expt_3_summary$human_acc)
 ```
 
-```{r fig-calibration, fig.env="figure", fig.pos = "t", fig.align = "center", out.width=".6\\textwidth", fig.width=3, fig.height=3, fig.cap = "Correlation between human accuracy and CLIP-MLP probability of target in Experiment 1.  Small points are individual descriptions, colored by decile of CLIP-MLP probability, large points and error bars are the bootstrapped mean and 95% CI across descriptions for each decile. \\label{calibration}" }
+```{r fig-calibration, out.width=".5\\textwidth", fig.cap = "Correlation between human accuracy and CLIP-MLP probability of target in Experiment 1.  Small points are individual descriptions, colored by decile of CLIP-MLP probability, large points and error bars are the bootstrapped mean and 95% CI across descriptions for each decile. \\label{calibration}" }
 expt_3_summary |> ggplot(aes(y = human_acc, x = value)) +
   geom_point(aes(color = grouping), alpha = .7) +
   # geom_line(data = summ, color = "black") +
@@ -185,7 +180,7 @@ tangram_predicted_expt_2_fig <- read_rds(here(mod_loc, "predicted/acc_2_tangram.
   mutate(across(mean:high, inv_logit_scaled))
 ```
 
-```{r fig-condition, fig.env="figure", fig.pos = "t", fig.align = "center", out.width=".95\\textwidth", fig.width=4, fig.height=3, fig.cap = "Accuracies for naïve human matchers and the CLIP-MLP model for Experiments 2a and 2b, grouped by the source of the referential description. Facets are the communication thickness of the original game and x-axis is when in the game the transcript came from. Point estimates and 95% CrI are predictions from the fixed effects of logistic and beta regressions. Bootstrapped mean accuracy from the original matchers is included as a ceiling, and random chance as a baseline. \\label{expt2-condition}" }
+```{r fig-condition, fig.cap = "Accuracies for naïve human matchers and the CLIP-MLP model for Experiments 2a and 2b, grouped by the source of the referential description. Facets are the communication thickness of the original game and x-axis is when in the game the transcript came from. Point estimates and 95% CrI are predictions from the fixed effects of logistic and beta regressions. Bootstrapped mean accuracy from the original matchers is included as a ceiling, and random chance as a baseline. \\label{expt2-condition}" }
 expt_2_fig_data |> ggplot(aes(x = round, color = source, y = correct, group = interaction(source, group_size), shape = group_size, lty = group_size)) +
   stat_summary(data = expt_2_fig_data |> filter(source == "Original matchers"), geom = "point", fun.data = "mean_cl_boot", position = position_dodge(.4)) +
   stat_summary(data = expt_2_fig_data |> filter(source == "Original matchers"), geom = "line", fun.data = "mean_cl_boot", position = position_dodge(.4)) +
@@ -207,7 +202,7 @@ expt_2_fig_data |> ggplot(aes(x = round, color = source, y = correct, group = in
 ```
 
 
-```{r fig-2, fig.env="figure", fig.pos = "t", fig.align = "center", out.width=".95\\textwidth", fig.width=4, fig.height=3, fig.cap = "Accuracies for naïve human matchers and the CLIP-MLP model for Experiments 2a and 2b, split out by target image. Point estimates and 95% CI are predictions from the fixed effects and by-tangram random effects of logistic and beta regressions, bootstrapped across conditions. Bootstrapped mean accuracy from the original matchers is included as a ceiling, and random chance as a baseline. \\label{expt2-tangram}" }
+```{r fig-2, fig.cap = "Accuracies for naïve human matchers and the CLIP-MLP model for Experiments 2a and 2b, split out by target image. Point estimates and 95% CI are predictions from the fixed effects and by-tangram random effects of logistic and beta regressions, bootstrapped across conditions. Bootstrapped mean accuracy from the original matchers is included as a ceiling, and random chance as a baseline. \\label{expt2-tangram}" }
 library(ggtext)
 correct_tangram <- c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L")
 labels <- c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L") |> map(~ str_c("<img src=", here(images, str_c("tangram_", ., ".png")), " width='20'/>"))
@@ -350,7 +345,7 @@ Because some descriptions are already fairly comprehensible in isolation, we foc
 
 We recruited 196 participants (99 in the yoked condition and 97 in shuffled) who each saw all 72 trials of one of the 10 games. This experiment was pre-registered at [this anonymized link](https://osf.io/zqwp5/?view_only=87420dc86f0a4a56a395cd464aa3a5c1). Participants read the transcripts in a modified self-paced reading procedure where they uncovered the text word-by-word (revealed words stayed visible); only after uncovering the entire transcript could participants select an image. 
 
-```{r fig-yoked, fig.env="figure", fig.pos = "t", fig.align = "center", out.width=".95\\textwidth", fig.width=5, fig.height=3, fig.cap = "Accuracies for Experiment 3. Error bars are bootstrapped 95% CIs. \\label{yoked}" }
+```{r fig-yoked,  fig.cap = "Accuracies for Experiment 3. Error bars are bootstrapped 95% CIs. \\label{yoked}" }
 expt_4_acc_data <- expt_4_data |>
   filter(type == "selection") |>
   mutate(correct = as.numeric(correct)) |>
@@ -454,11 +449,11 @@ The accuracy of the CLIP-MLP model was worse than the shuffled human results, an
 #### Incremental reading times
 
 
-```{r incremental-predictors, fig.env = "figure", fig.pos = "t!", out.width=".95\\textwidth", fig.align = "center", fig.cap = "Schematic of informativity predictors used in the incremental reading time analysis. \\label{incremental-predictors}", cache=FALSE}
+```{r incremental-predictors, out.width=".6\\textwidth", fig.cap = "Schematic of informativity predictors used in the incremental reading time analysis. \\label{incremental-predictors}", cache=FALSE}
 knitr::include_graphics(here("bad-ideas/preds.png"))
 ```
 
-```{r incremental-results, fig.env="figure", fig.pos = "t", fig.align = "center", out.width=".95\\textwidth", fig.width=7, fig.height=4, fig.cap = "Estimates and 95% credible intervals for coefficients in the incremental processing model. Word-level predictors are shown in panel A, colored by spillover position. Condition effects are shown in panel B. \\label{incremental-results}" }
+```{r incremental-results, fig.cap = "Estimates and 95% credible intervals for coefficients in the incremental processing model. Word-level predictors are shown in panel A, colored by spillover position. Condition effects are shown in panel B. \\label{incremental-results}" }
 blah <- read_rds(here(mod_loc, "summary/everything_lag3_normalized_summary.rds"))
 
 
