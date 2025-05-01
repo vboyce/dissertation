@@ -89,7 +89,7 @@ words <- combined_chat |> ungroup() |> select(total_num_words) |> summarize(word
 Much of human social life revolves around communication in groups. 
 At school, teachers address large classrooms of children [@cazden1988]; at home, we chat with groups of friends and family members over dinner [@tannen2005]; and at work, we attend meetings with colleagues and managers [@caplow1957; @zack1993].
 Such settings present considerable challenges that do not arise in the purely two-party (dyadic) settings typically studied in psychology [@branigan2006; @ginzburg2005; @traum2004]. 
-For example, producers need to account for the fact that different comprehenders in the group may have different mental states or levels of background understanding [@horton2005; @horton2002; @yoon2019a; @yoon2014; @weber2003;@foxtree2013], while comprehenders must account for the fact that utterances are not necessarily tailored to them [@fay2000; @carletta1998; @metzing2003; @yoon2019; @rogers2013; @cohn-gordon2019; @tolins2015].
+For example, producers need to account for the fact that different comprehenders in the group may have different mental states or levels of background understanding [@horton2005; @horton2002; @yoon2019audience; @yoon2014; @weber2003;@foxtree2013], while comprehenders must account for the fact that utterances are not necessarily tailored to them [@fay2000; @carletta1998; @metzing2003; @yoon2014; @rogers2013; @cohn-gordon2019; @tolins2015].
 What enables producers and comprehenders to nevertheless overcome these challenges and navigate multi-party settings with relative ease? 
 
 One promising set of hypotheses centers on the group's *interaction structure*, the set of constraints placed on the group's shared communication channel. 
@@ -105,14 +105,14 @@ They provide a clear metric of communicative effectiveness: how many words are r
 At the beginning of the game, long and costly descriptions are typically required to succeed. 
 A key finding, however, is that dyads become increasingly efficient over the course of interaction. 
 Fewer words are required to achieve the same accuracy, but referring expressions also become more impenetrable to outsiders [@schober1989; @wilkes-gibbs1992]. 
-The evolution of referring expressions over repetitions shows the characteristic dynamics of conventions: *stability*, or convergence on labels within a group, and *arbitrariness*, or divergence to different across groups, suggesting that dyads leverage their shared communication history to coordinate on expectations about how to label the target images [@hawkins2021]. 
+The evolution of referring expressions over repetitions shows the characteristic dynamics of conventions: *stability*, or convergence on labels within a group, and *arbitrariness*, or divergence to different across groups, suggesting that dyads leverage their shared communication history to coordinate on expectations about how to label the target images [@hawkins2020dynamics]. 
 
 
 In principle, repeated reference games provide a strong operationalization of communicative effectiveness for the problem of multi-party communication: describers must simultaneously achieve shared reference with multiple matchers. 
 However, empirically studying multi-party communication raises a number of difficulties in practice. 
 A much larger pool of participants must be recruited to achieve sufficient power at the relevant unit of analysis -- the group -- spanning a very high-dimensional space of possible parameter settings [@almaatouq2022].
-We address this problem by drawing on recent technical advances that have made it newly possible to achieve such samples using interactive web-based platforms [@almaatouq2021;@haber2019;@hawkins2021]. 
-Repeated reference games in web-based platforms have previously replicated earlier results from face-to-face studies, although people produce fewer words in text modalities than oral modalities [@hawkins2020]. The text-based chat modalities arguably more closely resemble the interfaces used by modern teams who increasingly communicate through group text threads or popular platforms like Slack or Discord. 
+We address this problem by drawing on recent technical advances that have made it newly possible to achieve such samples using interactive web-based platforms [@almaatouq2021;@haber2019;@hawkins2020dynamics]. 
+Repeated reference games in web-based platforms have previously replicated earlier results from face-to-face studies, although people produce fewer words in text modalities than oral modalities [@hawkins2020dynamics]. The text-based chat modalities arguably more closely resemble the interfaces used by modern teams who increasingly communicate through group text threads or popular platforms like Slack or Discord. 
 
 We leverage our platform to explore effects of group size and interaction channel thickness in a series of three experiments. 
 While we find that small groups reliably converge on group-specific "shorthand" regardless of the interaction structure, larger groups require thicker channels -- richer conversational feedback among members -- to achieve the same degree of coherence. 
@@ -128,7 +128,7 @@ knitr::include_graphics(here("mpt/expt-diagram4.pdf"))
 
 We recruited `r players` participants through Prolific, an online crowd-sourcing platform.
 Participants were organized into `r games` groups of size two to six for a communication game (Figure \@ref(fig:behavioral)A).
-On each trial, everyone in the group was shown a gallery of 12 tangram images [@clark1986; @hawkins2020; @ji2022a].
+On each trial, everyone in the group was shown a gallery of 12 tangram images [@clark1986; @hawkins2020dynamics ; @ji2022a].
 One player was designated the *describer* and the others were designated the *matchers*. 
 The describer was asked to use a chat box interface to describe a privately indicated *target* image. 
 After all matchers guessed which of the 12 images was the target, they received task feedback and proceeded to the next trial.
@@ -588,7 +588,7 @@ We confirmed that groups in all conditions replicated the classic patterns of in
 We also found some initial evidence that larger groups may struggle to improve performance in the absence of thick communication channels.
 Here, we aim to better understand the mechanisms that allow describers to use shorter descriptions without sacrificing accuracy. 
 In particular, we explore the hypothesis that interaction structure and group size affect performance through a *convention formation* process [@clark1986]. 
-Under a recent model of convention formation [@hawkins2021], groups are able to leverage their shared history to coordinate on stable expectations about how to refer to particular images.
+Under a recent model of convention formation [@hawkins2023chai], groups are able to leverage their shared history to coordinate on stable expectations about how to refer to particular images.
 This model makes specific predictions about how interaction structure affects the ability to coordinate, in terms of the available feedback.
 
 First, due to heterogeneity in the group -- 6 individuals who may have diverging conceptualizations --- a rational describer should provide a strictly more detailed initial description to hedge against multiple possible misunderstandings, as we previously observed. 
@@ -846,7 +846,7 @@ Small groups may be able to successfully form conventions under limited feedback
 Multi-player groups may therefore reveal key factors which are masked in purely dyadic settings.
 
 <!-- ## Efficiency without semantic convergence  -->
-Increasing efficiency, for example, has often been taken as an index of group-specific convention formation [@clark1986; @brennan1996; @yoon2014; @yoon2019a]. 
+Increasing efficiency, for example, has often been taken as an index of group-specific convention formation [@clark1986; @brennan1996; @yoon2014; @yoon2019audience]. 
 In our work, however, we observe distinct patterns for measures of raw utterance length compared to the dynamics of semantic content. 
 In Experiment 3, thin 6-person games showed much less group-specific divergence despite comparable accuracy and efficiency.
 This gap raises the possibility that it is possible to become more efficient and accurate without negotiating a unified group-specific label. 
@@ -855,7 +855,7 @@ Thus, we encourage measures of semantic content (and not just performance) when 
 
 The causal mechanisms driving group size effects remain unclear. 
 There are many differences between a 2-person group and a 6-person group that could plausibly lead to different outcomes. 
-For example, in a dyad, producers can tailor their utterances to the one matcher, but in large groups, producers must balance the competing needs of different comprehenders [@schober1989; @yoon2019a; @tolins2015]. These effects likely vary with the knowledge state and the communication channels available to comprehenders [@foxtree2013; @horton2002; @horton2005]. 
+For example, in a dyad, producers can tailor their utterances to the one matcher, but in large groups, producers must balance the competing needs of different comprehenders [@schober1989; @yoon2019audience; @tolins2015]. These effects likely vary with the knowledge state and the communication channels available to comprehenders [@foxtree2013; @horton2002; @horton2005]. 
 Further work digging into the language used and the interactions between participants might unearth plausible mechanisms for how differences in group size and interaction structure influence outcomes, pointing towards future experimental conditions. 
 
 <!-- ## Limitations and future directions.  -->
@@ -900,7 +900,7 @@ A total of 1319 people participated across the 3 experiments. We recruited enoug
 
 ### Materials
 
-The same 12 tangram images, drawn from @hawkins2020 and @clark1986, were used every block. 
+The same 12 tangram images, drawn from @hawkins2020dynamics and @clark1986, were used every block. 
 These images were displayed in a 4 $\times$ 3 grid with the order randomized across participants to disincentivize spatial descriptions such as "top left," as the image might be in a different place on the describer's and matchers' screens.
 To reduce cognitive load from visual search, the locations were fixed for each participant across trials.
 
@@ -941,7 +941,7 @@ Experiment 2 consisted of three different variations on Experiment 1, all conduc
 Each of these conditions differed from the Experiment 1 baseline in exactly one way. 
 In the *same describer* condition, one person was designated the describer for the entire game, rather than having the describer role rotate. 
 In the *full feedback* condition, all participants were shown what all others had selected as well as the identity of the correct target.
-This condition was similar to previous dyadic work, such as @hawkins2020, where the correct answer was indicated during feedback. 
+This condition was similar to previous dyadic work, such as @hawkins2020dynamics, where the correct answer was indicated during feedback. 
 In the *thin* condition, we altered the chatbox interface for matchers. 
 Instead of a textbox, matchers had 4 buttons, each of which sent a different emoji to the chat. Matchers were given suggested meanings for the 4 emojis during the instruction phase. They could send as many emojis as desired; for instance, they might initially indicate confusion, and later indicate understanding. In addition, for the thin condition, we added notifications that appeared in the chat box marking the time when each player had made a selection. 
 
