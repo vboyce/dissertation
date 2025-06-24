@@ -32,9 +32,9 @@ output:
 abstract: |
   `r if(knitr:::is_latex_output()) paste(readLines("00-abstract.Rmd"), collapse = '\n  ')`
 acknowledgements: |
-  To be written later
+  `r if(knitr:::is_latex_output()) paste(readLines("00-acknowledge.Rmd"), collapse = '\n  ')`
 dedication: |
-  To be written later
+  To those who supported me in this journey.
 #  I want to thank a few people.
 # Specify the location of the bibliography below
 bibliography: [bib/dissertation.bib]
