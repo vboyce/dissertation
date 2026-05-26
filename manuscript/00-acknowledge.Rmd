@@ -1,0 +1,29 @@
+The path my PhD and my PhD years took was shaped by a number of people to whom I owe thanks for their support. 
+
+First, I want to thank my parents for supporting me throughout my entire life. They cultivated intellectualism and knowledge-seeking in me from a young age. They also showed me that going to graduate school (at Stanford) was just a thing one does; the Stanford part is mostly coincidence. 
+
+On the research side, I’m grateful to my mentors, collaborators, and lab mates. I’d like to thank my mentors and committee members (past and present) for their thoughtful feedback and support on projects. 
+
+I’m extremely grateful to Mike for all of his support and wisdom. I heard a lot of praise about him when I was choosing a graduate program, and I think it's all true and then some. I've learned a lot, both from direct pedagogy and from observing what Mike does. And not just about research and academia, but also (and this is I think especially by example) how to be a good person, balance life and work, and deal with the ups and downs of life in academia. (Sorry about writing somewhat sappy things Mike, but I really do appreciate your being there for me throughout my PhD.)
+
+Mike has cultivated a really great community in LangCog. I’m grateful to all the members of LangCog (and the extended LangCog universe) who I’ve overlapped with. It's been a really great culture of people and, at least for me, the group has cultivated a great sense of belonging in spite of the diverse research topics. 
+
+I also owe thanks to my collaborators, and in particular, to the many research assistants who helped out collecting data for the developmental project. That project would not have been possible without them, and I’m grateful that they were willing to deal with preschoolers when I was not. I also owe thanks to Bobby for dealing with all the RA and Bing and iPad logistics for that project. 
+
+Alvin and I started out in LangCog at the same time and have gone from colleagues to collaborators and friends. I'm grateful to Alvin for a variety of different interactions -- pushing me to do some projects, being board game buddies, having an equal dedication to doing puzzle hunts (including at work during work hours), and giving feedback on this dissertation's introduction.
+
+While often not people I know personally, some people who have causally shaped my PhD journey are those who have made and maintained the software packages, open science resources, and academic computing tools that I’ve used. I don’t know how this PhD would have gone if I didn’t have tidyverse and the Rmarkdown to LaTeX to pdf pipeline, but it surely would have been worse and more filled with paranoid checking of numbers. 
+
+I’ve been very lucky to live at Ithaka for four years of my PhD. Thanks to everyone I've overlapped with at Ithaka for making our shared house a home and keeping me fed and providing me with people to hang out with when I wanted to socialize. The feeling of coming home to dinner and people to have dinner with provided a sense of needed stability for me for the past four years.
+
+To certain Ithakans, a deeper thanks is due. 
+
+Kelley and Isabel were both examples of how it’s possible to do a Stanford PhD while being a real person who wanted boba, and didn't always want to work, and to do all of this without going too crazy. Your survivals of the final year of grad school provided evidence that it was doable. 
+
+Isaac and Daniel are in my mind pillars of Ithaka and cornerstones of my friend circle within Ithaka. I’m very glad for a certain pizza outing that led me to get to be their friends. Their senses of humor and willingness to humor my frequent desires for ice cream and gossip walks are appreciated. 
+
+Walks actually turns out to be a common thread in a number of my interactions -- I might be afraid of forgetting specific individuals, but I think walk companions covers most potential omissions. So, to everyone who I went on walks (or more commonly "walkies") with during my PhD, I’m appreciative of our walks and co-occurring conversations. The motivations for walks varied greatly, and the conversations had many tones and were useful in a range of situations.
+
+Moving cross-country to start graduate school in 2020 was not an easy time for me, and I’m grateful to Andrea and the SGs for their important roles getting me through that rough patch. They have continued to be great supportive friends after that first year. 
+
+Finally, to Kevin and Ben, my “other significant other” and my “significant other”: each of you has been my go-to person for part of my PhD, and you've both done many walkies and coworkies with me, not to mention baking and board games and biking and everything else that doesn’t start with the letter “b”. I love you both dearly.
